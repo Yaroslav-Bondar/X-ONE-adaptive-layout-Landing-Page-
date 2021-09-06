@@ -1,0 +1,27 @@
+.logo {
+    display: flex;
+} 
+.logo1 {
+    display: flex;
+    align-items: center;
+    &__part1 {
+        width: 40.88px;
+        height: 41.05px;
+        margin-right: 8.27px;
+    }
+    &__part2 {
+        width: 135.65px;
+        height: 31.14px;
+    }
+    &__part1 > img,
+    &__part2 > img {
+        @extend %inner-img;
+    }
+}
+.logo2 {
+    width: 133.76px;
+    height: 51.73px;
+    & > img {
+        @extend %inner-img;
+    }
+}

@@ -1,0 +1,11 @@
+@mixin font($weight, $size, $line_height, $color, $text-transform: none, $style: normal, $family: 'Roboto Bold') {
+    font: {
+        weight: $weight;
+        style: $style;
+        size: $size;
+        family: $family; 
+    }
+    text-transform: $text-transform;
+    line-height: $line_height;
+    color: $color;
+  }

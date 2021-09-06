@@ -1,0 +1,111 @@
+@import 'var';
+@import 'mixins';
+@import 'extends';
+@import 'common';
+@import 'logo';
+@import 'social';
+body {
+    font-family: "Roboto Bold";
+    background-color: $main-background-color;    
+}
+.wrapper {
+    max-width: $wrapper-width;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.header {
+    position: relative;
+    padding: 30px 0;
+    & .wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__logo1 {
+        margin-right: 142.21px;
+    }
+    &__border {
+        position: absolute;
+        bottom: 0;
+        height: 1px;
+        width: calc(#{$wrapper-width} - 30px);
+        background-color: #002138;
+    }
+}
+.prize {
+    &__conteiner {
+        display: flex;
+    }
+    &__block1 {
+        width: 50%;
+    }
+    &__title {
+        margin-top: 30px;
+        @include font(700, 50px, 125%, $white, uppercase);
+        &-color {
+            color: $accent;
+        }
+    }
+    &__describe {
+        margin-top: 34px;
+        @include font(400, 23px, 150%, $gray, $family: 'Roboto Regular');
+    }
+    &__button {
+        margin-top: 35px;
+        width: 300px;
+        height: 79px;
+    }
+    &__block2 {
+        width: 50%;
+    }
+    &__slider {
+        position: relative;
+        cursor: pointer;
+    }
+    &__slide {
+        &-img {
+            height: 460px;
+            overflow: hidden;
+            &-item {
+                @extend %inner-img;
+                height: 557px;
+            }    
+        }
+        &-descrip {
+            float: right;
+        }
+    }
+    &__dots {
+        position: absolute;
+        right: 0;
+        bottom: 40px; 
+        display: flex;
+        flex-flow: column;
+        align-items: flex-end;
+        z-index: 5;
+    }
+    &__dot {
+        width: 30px;
+        height: 2px;
+        background-color: white;
+        transition: .2s width;
+    }
+    &__dot:not(:last-child) {
+        margin-bottom: 10px;
+    }
+    &__dot_active {
+        width: 23px;
+        background-color: $accent;
+    }
+
+    // &__slide-descrip {
+        
+    // }
+}
+// .swiper-slide {
+//     background-position: center;
+//     background-size: cover;
+// }
+
+
+

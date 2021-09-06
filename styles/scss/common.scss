@@ -1,0 +1,18 @@
+.line {
+    width: 80px;
+    border: 5px solid $accent;
+}
+.btn {
+    @extend %center-xy-flex;
+    @include font(700, 23px, 125%, $main-background-color, $text-transform: uppercase, $family: 'Roboto Bold');
+    background: #FAAF18;
+    border-radius: 25px;
+    cursor: pointer;
+}
+.description {
+    width: 750px;
+    padding: 40px 80px;
+    @include font(400, 17px, 150%, $white, $family: 'Roboto Regular');
+    background: #002138;
+    border-radius: 25px;
+}
