@@ -1,4 +1,4 @@
-.prize__slide-img-item, .social__img-item, .logo2 > img, .logo1__part1 > img, .logo1__part2 > img {
+.prize__slide-img-item, .logo2 > img, .logo1__part1 > img, .logo1__part2 > img, .social__img-item {
   display: block;
   width: 100%;
   height: 100%;
@@ -9,6 +9,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.wrapper {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
 .line {
@@ -43,6 +49,44 @@
   border-radius: 25px;
 }
 
+.social {
+  display: flex;
+}
+.social :not(:last-child) {
+  margin-right: 37px;
+}
+.social__img {
+  width: 36px;
+  height: 36px;
+}
+@keyframes fade {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.header {
+  position: relative;
+  padding: 30px 0;
+}
+.header .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__logo1 {
+  margin-right: 142.21px;
+}
+.header__border {
+  position: absolute;
+  bottom: 0;
+  height: 1px;
+  width: calc(1300px - 30px);
+  background-color: #002138;
+}
+
 .logo {
   display: flex;
 }
@@ -64,49 +108,13 @@
   width: 133.76px;
   height: 51.73px;
 }
-.social {
-  display: flex;
-}
-.social :not(:last-child) {
-  margin-right: 37px;
-}
-.social__img {
-  width: 36px;
-  height: 36px;
-}
-body {
-  font-family: "Roboto Bold";
-  background-color: #001424;
-}
-
-.wrapper {
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 0 15px;
-}
-
-.header {
-  position: relative;
-  padding: 30px 0;
-}
-.header .wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.header__logo1 {
-  margin-right: 142.21px;
-}
-.header__border {
-  position: absolute;
-  bottom: 0;
-  height: 1px;
-  width: calc(1300px - 30px);
-  background-color: #002138;
-}
-
 .prize__conteiner {
   display: flex;
+}
+@media screen and (max-width: 1024px) {
+  .prize__conteiner {
+    flex-direction: column;
+  }
 }
 .prize__block1 {
   width: 50%;
@@ -156,6 +164,16 @@ body {
 .prize__slide-descrip {
   float: right;
 }
+@media screen and (max-width: 1200px) {
+  .prize__slide-descrip {
+    width: 650px;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .prize__slide-descrip {
+    width: 600px;
+  }
+}
 .prize__dots {
   position: absolute;
   right: 0;
@@ -177,6 +195,15 @@ body {
 .prize__dot_active {
   width: 23px;
   background-color: #FAAF18;
+}
+.prize__fade {
+  animation-name: fade;
+  animation-duration: 2s;
+}
+
+body {
+  font-family: "Roboto Bold";
+  background-color: #001424;
 }
 
 /*# sourceMappingURL=style.css.map */

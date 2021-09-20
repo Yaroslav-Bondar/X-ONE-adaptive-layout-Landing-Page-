@@ -1,3 +1,8 @@
+.wrapper {
+    max-width: $wrapper-width;
+    margin: 0 auto;
+    padding: 0 15px;
+}
 .line {
     width: 80px;
     border: 5px solid $accent;
@@ -15,4 +20,21 @@
     @include font(400, 17px, 150%, $white, $family: 'Roboto Regular');
     background: #002138;
     border-radius: 25px;
+}
+.social {
+    display: flex;
+    & :not(:last-child) {
+        margin-right: 37px;
+    }
+    &__img {
+        width: 36px;
+        height: 36px;
+        &-item {
+            @extend %inner-img;
+        }
+    }
+}
+@keyframes fade {
+    0%   {opacity: 0.5;}
+    100% {opacity: 1; }
 }

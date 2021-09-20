@@ -26,6 +26,8 @@ function showSlides (n) {
   for (const el of prizeDots) {
     el.classList.remove('prize__dot_active')  
   }
+  // prizeSlides[slideIndex - 1].classList.add('prize__fade')
+
   prizeSlides[slideIndex - 1].style.display = 'block'
   prizeDots[slideIndex - 1].classList.add('prize__dot_active')
 
@@ -40,8 +42,7 @@ function showSlides (n) {
 }
 showSlides(slideIndex)
 
-// we eliminate the intersection 
-// and adjust the indentation with 
+// we eliminate the intersection and adjust the indentation with 
 // the current slide when resizing the browser window
 window.addEventListener('resize', ()=> {
     overlapA.changeOverlap()

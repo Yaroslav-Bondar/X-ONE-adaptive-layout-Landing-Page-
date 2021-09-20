@@ -1,0 +1,79 @@
+.prize {
+    &__conteiner {
+        display: flex;
+        @media screen and (max-width: 1024px) {
+            flex-direction: column;
+        }
+    }
+    &__block1 {
+        width: 50%;
+    }
+    &__title {
+        margin-top: 30px;
+        @include font(700, 50px, 125%, $white, uppercase);
+        &-color {
+            color: $accent;
+        }
+    }
+    &__describe {
+        margin-top: 34px;
+        @include font(400, 23px, 150%, $gray, $family: 'Roboto Regular');
+    }
+    &__button {
+        margin-top: 35px;
+        width: 300px;
+        height: 79px;
+    }
+    &__block2 {
+        width: 50%;
+    }
+    &__slider {
+        position: relative;
+        cursor: pointer;
+    }
+    &__slide {
+        &-img {
+            height: 460px;
+            overflow: hidden;
+            &-item {
+                @extend %inner-img;
+                height: 557px;
+            }    
+        }
+        &-descrip {
+            float: right;
+            @media screen and (max-width: 1200px) {
+                width: 650px;
+            }
+            @media screen and (max-width: 1100px) {
+                width: 600px;
+            }
+        }
+    }
+    &__dots {
+        position: absolute;
+        right: 0;
+        bottom: 40px; 
+        display: flex;
+        flex-flow: column;
+        align-items: flex-end;
+        z-index: 5;
+    }
+    &__dot {
+        width: 30px;
+        height: 2px;
+        background-color: white;
+        transition: .2s width;
+    }
+    &__dot:not(:last-child) {
+        margin-bottom: 10px;
+    }
+    &__dot_active {
+        width: 23px;
+        background-color: $accent;
+    }
+    &__fade {
+        animation-name: fade;
+        animation-duration: 2s;
+    }
+}
