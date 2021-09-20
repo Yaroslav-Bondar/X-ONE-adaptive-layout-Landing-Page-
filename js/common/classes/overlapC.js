@@ -1,10 +1,5 @@
 // the class solves the block intersection problem
 // for example when the content of the html template changes 
-
-let prizeDescribe = document.querySelector('.prize__describe')
-let prizeSlideDescrip = document.querySelector('.prize__slide-descrip')
-let prizeTitle = document.querySelector('.prize__title')
-
 class Overlap {
     // intersecting objects, the desired distance between them
     constructor(objA, objB, gap) {
@@ -43,20 +38,3 @@ class Overlap {
         }
     }
 }
-
-const overlapA = new Overlap(prizeDescribe, prizeSlideDescrip, 50)
-const overlapB = new Overlap(prizeTitle, prizeSlideDescrip, 50)
-
-overlapA.changeOverlap()
-overlapB.changeOverlap()
-
-window.addEventListener('resize', ()=> {
-    overlapA.changeOverlap()
-    overlapB.changeOverlap()
-    if(overlapA.isOverlap) {
-        overlapA.killGap()
-    }
-    if(overlapB.isOverlap) {
-        overlapB.killGap()
-    }
-})
