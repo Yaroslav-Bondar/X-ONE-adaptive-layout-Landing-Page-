@@ -110,6 +110,7 @@
 }
 .prize__conteiner {
   display: flex;
+  margin-top: 130px;
 }
 @media screen and (max-width: 1024px) {
   .prize__conteiner {
@@ -118,6 +119,11 @@
 }
 .prize__block1 {
   width: 50%;
+}
+@media screen and (max-width: 1024px) {
+  .prize__block1 {
+    width: 100%;
+  }
 }
 .prize__title {
   margin-top: 30px;
@@ -128,6 +134,11 @@
   text-transform: uppercase;
   line-height: 125%;
   color: #FFFFFF;
+}
+@media screen and (max-width: 1024px) {
+  .prize__title {
+    width: 100% !important;
+  }
 }
 .prize__title-color {
   color: #FAAF18;
@@ -142,6 +153,11 @@
   line-height: 150%;
   color: #E4E4E4;
 }
+@media screen and (max-width: 1024px) {
+  .prize__describe {
+    width: 100% !important;
+  }
+}
 .prize__button {
   margin-top: 35px;
   width: 300px;
@@ -149,6 +165,12 @@
 }
 .prize__block2 {
   width: 50%;
+}
+@media screen and (max-width: 1024px) {
+  .prize__block2 {
+    width: 100%;
+    margin-top: 50px;
+  }
 }
 .prize__slider {
   position: relative;
@@ -172,6 +194,11 @@
 @media screen and (max-width: 1100px) {
   .prize__slide-descrip {
     width: 600px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .prize__slide-descrip {
+    width: 100%;
   }
 }
 .prize__dots {
