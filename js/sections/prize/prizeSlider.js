@@ -1,3 +1,4 @@
+
 let prizeSlider = document.querySelector('.prize__slider')
 let prizeSlides = document.getElementsByClassName('prize__slide')
 let prizeDots = document.getElementsByClassName('prize__dot')
@@ -9,6 +10,20 @@ let slideIndex = 1
 let overlapA
 let overlapB
 let isOverlap = false
+// set the same height for all slides
+let maxSlideHeight
+let slidesHeight = new Array()
+
+for (const item of prizeSlides) {
+  slidesHeight.push(item.offsetHeight)
+}
+maxSlideHeight = Math.max(...slidesHeight)
+
+for (const item of prizeSlides) {
+  if(item.offsetHeight !== maxSlideHeight)
+    item.style.height = maxSlideHeight + 'px'
+}
+// // set the same height for all slides
 
 function setIsOverlap(val) {
   if(!isOverlap) {
@@ -59,14 +74,15 @@ window.addEventListener('resize', ()=> {
 prizeSlider.addEventListener('click', (e)=> {
   if (e.target.closest('.prize__dots')) return
   showSlides(slideIndex += 1)
+  // maxHeight()
 })
 
 // click on dots
 for (let i = 0; i < prizeDots.length; i++) {
   prizeDots[i].addEventListener('click', ()=> {
-    showSlides(slideIndex = i + 1)
+    // showSlides(slideIndex = i + 1)
+    showSlides(slideIndex += 1)
   })  
 }
-
  
 

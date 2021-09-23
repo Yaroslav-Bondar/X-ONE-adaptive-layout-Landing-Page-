@@ -201,10 +201,15 @@
     width: 100%;
   }
 }
+.prize__slide::after {
+  content: "";
+  display: block;
+  clear: both;
+}
 .prize__dots {
   position: absolute;
   right: 0;
-  bottom: 40px;
+  top: 350px;
   display: flex;
   flex-flow: column;
   align-items: flex-end;
