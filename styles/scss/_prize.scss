@@ -5,6 +5,9 @@
         @media screen and (max-width: $brkpoint-1) {
             flex-direction: column;
         }
+        @media screen and (max-width: $brkpoint-2) {
+            margin-top: 70px;
+        }
     }
     &__block1 {
         width: 50%;
@@ -18,6 +21,12 @@
         @include font(700, 50px, 125%, $white, uppercase);
         @media screen and (max-width: $brkpoint-1) {
             width: 100% !important;
+        }
+        @media screen and (max-width: $brkpoint-2) {
+            font-size: 35px;
+        }
+        @media screen and (max-width: $brkpoint-4) {
+            font-size: 30px;
         }
         &-color {
             color: $accent;
@@ -39,6 +48,9 @@
         @include font(400, 23px, 150%, $gray, $family: 'Roboto Regular');
         @media screen and (max-width: $brkpoint-1) {
             width: 100% !important;
+        }
+        @media screen and (max-width: $brkpoint-2) {
+            font-size: 18px;
         }
     }
     &__button {
@@ -65,19 +77,63 @@
             display: block;
             content: '';
             position: absolute;
-            width: 360px;
-            height: 360px;
+            width: 581px;
+            height: 581px;
             border-radius: 50%;
             filter: blur($decor-blur-xl);
             z-index: -1;
+            @media screen and(max-width: $brkpoint-1) {
+                width: 470px;
+                height: 470px;
+                filter: blur($decor-blur-l);
+            }
+            @media screen and(max-width: $brkpoint-2) {
+                width: 360px;
+                height: 360px;
+                filter: blur($decor-blur-m);
+            }
+            @media screen and(max-width: $brkpoint-3) {
+                width: 264.95px;
+                height: 264.95px;
+                filter: blur($decor-blur-s);
+            }
+            @media screen and(max-width: $brkpoint-4) {
+                width: 200px;
+                height: 200px;
+                filter: blur($decor-blur-xs);
+            }
         }
         & .prize__slide .prize__slide-img-wrap::before {
-            top: -10%;
-            left: 44%;
+            top: -11%;
+            left: 31%;
+            @media screen and(max-width: $brkpoint-1) {
+                top: -11%;
+                left: 39%;
+            }
+            @media screen and(max-width: $brkpoint-3) {
+                top: 2%;
+                left: 42%;
+            }
+            @media screen and(max-width: $brkpoint-3) {
+                top: 18%;
+                left: 33%;
+            }
         }
         & .prize__slide .prize__slide-img-wrap::after {
-            top: 44%;
-            left: -10%;
+            top: 55%;
+            left: -22%;
+            @media screen and(max-width: $brkpoint-1) {
+                top: 15%;
+                left: 12%;
+            }
+            @media screen and(max-width: $brkpoint-2) {
+                top: 25%;
+                left: 2%;
+            }
+            @media screen and(max-width: $brkpoint-3) {
+                top: 40%;
+                left: 0%;
+            }
         }
         & .prize__slide_1 .prize__slide-img-wrap::before {
             background-color: $decor-color-1;
@@ -132,6 +188,7 @@
             }
             @media screen and (max-width: $brkpoint-3) {
                 padding: 25px 35px;
+                font-size: 15px;
             }
             @media screen and (max-width: $brkpoint-4) {
                 padding: 20px;
