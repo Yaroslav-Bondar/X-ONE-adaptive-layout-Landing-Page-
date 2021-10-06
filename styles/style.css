@@ -71,6 +71,11 @@
   position: relative;
   padding: 30px 0;
 }
+@media screen and (max-width: 320px) {
+  .header {
+    padding: 15px 0;
+  }
+}
 .header .wrapper {
   display: flex;
   justify-content: space-between;
@@ -79,12 +84,44 @@
 .header__logo1 {
   margin-right: 142.21px;
 }
+@media screen and (max-width: 1024px) {
+  .header__logo1 {
+    margin-right: 21px;
+  }
+}
 .header__border {
   position: absolute;
   bottom: 0;
   height: 1px;
   width: calc(1300px - 30px);
   background-color: #002138;
+}
+@media screen and (max-width: 768px) {
+  .header__social-img {
+    width: 25px;
+    height: 25px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .header__social-img {
+    width: 20px;
+    height: 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .header__social-img:not(:last-child) {
+    margin-right: 28px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .header__social-img:not(:last-child) {
+    margin-right: 4px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .header__social-img:not(:last-child) {
+    margin-right: 17px;
+  }
 }
 
 .logo {
@@ -100,13 +137,49 @@
   height: 41.05px;
   margin-right: 8.27px;
 }
+@media screen and (max-width: 768px) {
+  .logo1__part1 {
+    width: 25px;
+    height: 25px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .logo1__part1 {
+    width: 17px;
+    height: 16px;
+  }
+}
 .logo1__part2 {
   width: 135.65px;
   height: 31.14px;
 }
+@media screen and (max-width: 768px) {
+  .logo1__part2 {
+    width: 84.24px;
+    height: 18.95px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .logo1__part2 {
+    width: 56px;
+    height: 12px;
+  }
+}
 .logo2 {
   width: 133.76px;
   height: 51.73px;
+}
+@media screen and (max-width: 768px) {
+  .logo2 {
+    width: 88px;
+    height: 34px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .logo2 {
+    width: 50px;
+    height: 19px;
+  }
 }
 .prize__conteiner {
   display: flex;
@@ -126,6 +199,7 @@
   }
 }
 .prize__title {
+  position: relative;
   margin-top: 30px;
   font-weight: 700;
   font-style: normal;
@@ -142,6 +216,17 @@
 }
 .prize__title-color {
   color: #FAAF18;
+}
+.prize__title::before {
+  content: "";
+  position: absolute;
+  top: -111px;
+  left: -68px;
+  width: 248px;
+  height: 248px;
+  background: rgba(250, 175, 24, 0.56);
+  filter: blur(300px);
+  border-radius: 50%;
 }
 .prize__describe {
   margin-top: 34px;
@@ -163,6 +248,12 @@
   width: 300px;
   height: 79px;
 }
+@media screen and (max-width: 1024px) {
+  .prize__button {
+    width: 255px;
+    height: 73px;
+  }
+}
 .prize__block2 {
   width: 50%;
 }
@@ -176,12 +267,61 @@
   position: relative;
   cursor: pointer;
 }
+.prize__slider .prize__slide .prize__slide-img-wrap::before, .prize__slider .prize__slide .prize__slide-img-wrap::after {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  filter: blur(400px);
+  z-index: -1;
+}
+.prize__slider .prize__slide .prize__slide-img-wrap::before {
+  top: -10%;
+  left: 44%;
+}
+.prize__slider .prize__slide .prize__slide-img-wrap::after {
+  top: 44%;
+  left: -10%;
+}
+.prize__slider .prize__slide_1 .prize__slide-img-wrap::before {
+  background-color: rgba(165, 22, 22, 0.7);
+}
+.prize__slider .prize__slide_1 .prize__slide-img-wrap::after {
+  background-color: rgba(22, 45, 165, 0.39);
+}
+.prize__slider .prize__slide_2 .prize__slide-img-wrap::before {
+  background-color: rgba(22, 45, 165, 0.39);
+}
+.prize__slider .prize__slide_2 .prize__slide-img-wrap::after {
+  background-color: rgba(22, 165, 122, 0.33);
+}
+.prize__slider .prize__slide_3 .prize__slide-img-wrap::before {
+  background-color: rgba(165, 22, 150, 0.7);
+}
+.prize__slider .prize__slide_3 .prize__slide-img-wrap::after {
+  background-color: rgba(22, 165, 96, 0.39);
+}
 .prize__slide-img {
   height: 460px;
   overflow: hidden;
 }
+@media screen and (max-width: 480px) {
+  .prize__slide-img {
+    height: 416px;
+  }
+}
+.prize__slide-img-wrap {
+  position: relative;
+}
 .prize__slide-img-item {
   height: 557px;
+}
+@media screen and (max-width: 480px) {
+  .prize__slide-img-item {
+    height: 455px;
+  }
 }
 .prize__slide-descrip {
   float: right;
@@ -199,6 +339,21 @@
 @media screen and (max-width: 1024px) {
   .prize__slide-descrip {
     width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .prize__slide-descrip {
+    padding: 30px 45px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .prize__slide-descrip {
+    padding: 25px 35px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .prize__slide-descrip {
+    padding: 20px;
   }
 }
 .prize__slide::after {

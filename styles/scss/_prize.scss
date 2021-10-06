@@ -2,30 +2,42 @@
     &__conteiner {
         display: flex;
         margin-top: 130px;
-        @media screen and (max-width: $prize-brkpoint-3) {
+        @media screen and (max-width: $brkpoint-1) {
             flex-direction: column;
         }
     }
     &__block1 {
         width: 50%;
-        @media screen and (max-width: $prize-brkpoint-3) {
+        @media screen and (max-width: $brkpoint-1) {
             width: 100%;
         }
     }
     &__title {
+        position: relative;
         margin-top: 30px;
         @include font(700, 50px, 125%, $white, uppercase);
-        @media screen and (max-width: $prize-brkpoint-3) {
+        @media screen and (max-width: $brkpoint-1) {
             width: 100% !important;
         }
         &-color {
             color: $accent;
         }
     }
+    &__title::before {
+        content: '';
+        position: absolute;
+        top: -111px;
+        left: -68px;
+        width: 248px;
+        height: 248px;
+        background: rgba(250, 175, 24, 0.56);
+        filter: blur(300px);
+        border-radius: 50%;
+    }
     &__describe {
         margin-top: 34px;
         @include font(400, 23px, 150%, $gray, $family: 'Roboto Regular');
-        @media screen and (max-width: $prize-brkpoint-3) {
+        @media screen and (max-width: $brkpoint-1) {
             width: 100% !important;
         }
     }
@@ -33,10 +45,14 @@
         margin-top: 35px;
         width: 300px;
         height: 79px;
+        @media screen and (max-width: $brkpoint-1) {
+            width: 255px;
+            height: 73px;
+        }
     }
     &__block2 {
         width: 50%;
-        @media screen and (max-width: $prize-brkpoint-3) {
+        @media screen and (max-width: $brkpoint-1) {
             width: 100%;
             margin-top: 50px;
         }
@@ -44,14 +60,60 @@
     &__slider {
         position: relative;
         cursor: pointer;
+        & .prize__slide .prize__slide-img-wrap::before,
+        & .prize__slide .prize__slide-img-wrap::after {
+            display: block;
+            content: '';
+            position: absolute;
+            width: 360px;
+            height: 360px;
+            border-radius: 50%;
+            filter: blur($decor-blur-xl);
+            z-index: -1;
+        }
+        & .prize__slide .prize__slide-img-wrap::before {
+            top: -10%;
+            left: 44%;
+        }
+        & .prize__slide .prize__slide-img-wrap::after {
+            top: 44%;
+            left: -10%;
+        }
+        & .prize__slide_1 .prize__slide-img-wrap::before {
+            background-color: $decor-color-1;
+        }
+        & .prize__slide_1 .prize__slide-img-wrap::after {
+            background-color: $decor-color-2;
+        }
+        & .prize__slide_2 .prize__slide-img-wrap::before {
+            background-color: $decor-color-3;
+        }
+        & .prize__slide_2 .prize__slide-img-wrap::after {
+            background-color: $decor-color-4;
+        }
+        & .prize__slide_3 .prize__slide-img-wrap::before {
+            background-color: $decor-color-5;
+        }
+        & .prize__slide_3 .prize__slide-img-wrap::after {
+            background-color: $decor-color-6;
+        }
     }
     &__slide {
         &-img {
             height: 460px;
             overflow: hidden;
+            @media screen and (max-width: $brkpoint-3) {
+                height: 416px;
+            }
+            &-wrap {
+                position: relative;
+            }
             &-item {
                 @extend %inner-img;
                 height: 557px;
+                @media screen and (max-width: $brkpoint-3) {
+                    height: 455px;
+                }
             }    
         }
         &-descrip {
@@ -62,8 +124,17 @@
             @media screen and (max-width: $prize-brkpoint-2) {
                 width: 600px;
             }
-            @media screen and (max-width: $prize-brkpoint-3) {
+            @media screen and (max-width: $brkpoint-1) {
                 width: 100%;
+            }
+            @media screen and (max-width: $brkpoint-2) {
+                padding: 30px 45px;
+            }
+            @media screen and (max-width: $brkpoint-3) {
+                padding: 25px 35px;
+            }
+            @media screen and (max-width: $brkpoint-4) {
+                padding: 20px;
             }
         }
     }

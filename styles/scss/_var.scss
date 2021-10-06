@@ -1,5 +1,11 @@
 $wrapper-width: 1300px;
 
+$decor-blur-xl: 400px;
+$decor-blur-l: 350px;
+$decor-blur-m: 200px;
+$decor-blur-s: 180px;
+$decor-blur-xs: 135px;
+
 // colors
 $main-background-color:#001424;
 $accent: #FAAF18;
@@ -7,9 +13,28 @@ $gray: #E4E4E4;
 $white: #FFFFFF;
 $logo: #00ABC5;
 
+// slider
+$decor-color-1: rgba(165, 22, 22, 0.7);
+$decor-color-2: rgba(22, 45, 165, 0.39);
+$decor-color-3: rgba(22, 45, 165, 0.39);
+$decor-color-4: rgba(22, 165, 122, 0.33);
+$decor-color-5: rgba(165, 22, 150, 0.7);
+$decor-color-6: rgba(22, 165, 96, 0.39);
+// // slider
+
+// //colors
+
 // breakpoints
-    // prize
-    $prize-brkpoint-1: 1200px;
-    $prize-brkpoint-2: 1100px;
-    $prize-brkpoint-3: 1024px;
+$brkpoint-1: 1024px;
+$brkpoint-2: 768px;
+$brkpoint-3: 480px;
+$brkpoint-4: 320px;
+
+// prize
+$prize-brkpoint-1: 1200px;
+$prize-brkpoint-2: 1100px;
+// $brkpoint-3: 1024px;
+// $brkpoint-2: 768px;
+// $brkpoint-3: 480px;
+// $brkpoint-4: 320px;
     
