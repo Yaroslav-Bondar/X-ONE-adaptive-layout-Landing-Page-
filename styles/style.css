@@ -463,7 +463,7 @@
 }
 .prize__dot {
   width: 30px;
-  height: 2px;
+  height: 3px;
   background-color: white;
   transition: 0.2s width;
 }

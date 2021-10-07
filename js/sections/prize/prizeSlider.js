@@ -3,7 +3,8 @@
 
 let prizeSlider = document.querySelector('.prize__slider')
 let prizeSlides = document.getElementsByClassName('prize__slide')
-let prizeDots = document.getElementsByClassName('prize__dot')
+let prizeDots = document.querySelector('.prize__dots')
+let prizeDot = document.querySelectorAll('.prize__dot')
 let prizeSlideDescrips = document.querySelectorAll('.prize__slide-descrip')
 let prizeDescribe = document.querySelector('.prize__describe')
 let prizeTitle = document.querySelector('.prize__title')
@@ -38,7 +39,11 @@ function setIsOverlap(val) {
     isOverlap = val
   }
 }
-
+function addClass(obj, name) {
+  if(!obj[slideIndex - 1].classList.contains(name)) {
+    obj[slideIndex - 1].classList.add(name)
+  }
+}
 function showSlides (n) {
   // spin slides in a circle
   if(n > prizeSlides.length) slideIndex = 1
@@ -46,13 +51,12 @@ function showSlides (n) {
   for (const el of prizeSlides) {
     el.style.display = 'none'  
   }
-  for (const el of prizeDots) {
+  for (const el of prizeDot) {
     el.classList.remove('prize__dot_active')  
   }
-  // prizeSlides[slideIndex - 1].classList.add('prize__fade')
 
   prizeSlides[slideIndex - 1].style.display = 'block'
-  prizeDots[slideIndex - 1].classList.add('prize__dot_active')
+  prizeDot[slideIndex - 1].classList.add('prize__dot_active')
 
   // eliminate the intersection with the current slide
   overlapA = new Overlap(prizeDescribe, prizeSlideDescrips[slideIndex - 1], 50)
@@ -82,16 +86,23 @@ window.addEventListener('resize', ()=> {
 // click on slider conteiner
 prizeSlider.addEventListener('click', (e)=> {
   if (e.target.closest('.prize__dots')) return
-  showSlides(slideIndex += 1)
+    showSlides(slideIndex += 1)
+    addClass(prizeSlides, 'prize__fade')
+
+    // if(!prizeSlides[slideIndex - 1].classList.contains('prize__fade')) {
+    //   prizeSlides[slideIndex - 1].classList.add('prize__fade')
+    // }
   // maxHeight()
 })
 
 // click on dots
-for (let i = 0; i < prizeDots.length; i++) {
-  prizeDots[i].addEventListener('click', ()=> {
-    // showSlides(slideIndex = i + 1)
-    showSlides(slideIndex += 1)
-  })  
-}
+prizeDots.addEventListener('click', (e) => {
+  if(!e.target.closest('.prize__dot')) return
+  let index = +e.target.dataset.index
+  slideIndex = index
+  addClass(prizeSlides, 'prize__fade')
+  showSlides(slideIndex - 1)
+})
+
  
 
