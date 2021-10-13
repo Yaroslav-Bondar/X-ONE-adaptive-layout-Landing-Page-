@@ -565,12 +565,15 @@
   margin-bottom: 30px;
 }
 .draw__slide_active .draw__slide-number {
+  animation: fade 0.2s;
   color: #FAAF18;
 }
 .draw__slide_active .draw__slide-number::before {
+  animation: fade 0.2s;
   background-color: #FAAF18;
 }
 .draw__slide_active .draw__slide-comment {
+  animation: fade 2s;
   display: block;
 }
 .draw__slide-number {
@@ -586,6 +589,11 @@
   text-transform: none;
   line-height: 100%;
   color: #002138;
+  cursor: pointer;
+}
+.draw__slide-number:hover {
+  color: #00ABC5;
+  transition: color 0.2s;
 }
 .draw__slide-number::before {
   content: "";

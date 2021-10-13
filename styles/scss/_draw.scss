@@ -31,12 +31,15 @@
             margin-bottom: 30px;
         }
         &_active &-number {
+            animation: fade .2s;
             color: $accent;
         }
         &_active &-number::before {
+            animation: fade .2s;
             background-color: $accent;
         }
         &_active &-comment {
+            animation: fade 2s;
             display: block;
         }
         &-number {
@@ -46,6 +49,11 @@
             width: 47px;
             height: 40px;
             @include font(700, 40px, 100%, $slide-not-active-color);
+            cursor: pointer;
+        }
+        &-number:hover {
+            color: $logo;
+            transition: color .2s;
         }
         &-number::before {
             content: '';
@@ -56,7 +64,6 @@
             transform: translateY(-50%);
             width: 6px;
             height: 40px;
-            // background: $accent;
             background-color: transparent;
             border-radius: 100px;
         }
