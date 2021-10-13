@@ -38,6 +38,7 @@
   color: #001424;
   background: #FAAF18;
   border-radius: 25px;
+  border: none;
   cursor: pointer;
 }
 
@@ -65,6 +66,65 @@
   width: 36px;
   height: 36px;
 }
+.accent__color {
+  color: #FAAF18;
+}
+
+.title {
+  font-weight: 700;
+  font-style: normal;
+  font-size: 45px;
+  font-family: "Roboto Bold";
+  text-transform: none;
+  line-height: 120%;
+  color: #FFFFFF;
+}
+
+.form {
+  display: flex;
+  flex-flow: column;
+  width: 420px;
+}
+.form :nth-child(1n):not(:last-child) {
+  margin-bottom: 30px;
+}
+.form__input {
+  text-indent: 60px;
+  outline: none;
+  height: 85px;
+  background-color: transparent;
+  border-radius: 25px;
+  border: 1px solid #044654;
+  transition-property: border-color, box-shadow;
+  transition: 0.2s;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 19px;
+  font-family: "Roboto Regular";
+  text-transform: none;
+  line-height: 125%;
+  color: #696969;
+}
+.form__input::placeholder, .form__input::-webkit-input-placeholder, .form__input::-moz-placeholder {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 19px;
+  font-family: "Roboto Regular";
+  text-transform: none;
+  line-height: 125%;
+  color: #696969;
+}
+.form__input:focus {
+  border: 1px solid #FAAF18;
+}
+.form__input:hover {
+  border: 1px solid transparent;
+  box-shadow: 0 0 10px 2px #00ABC5;
+}
+.form__btn {
+  height: 85px;
+}
+
 @keyframes fade {
   0% {
     opacity: 0.5;
@@ -235,9 +295,6 @@
     font-size: 30px;
   }
 }
-.prize__title-color {
-  color: #FAAF18;
-}
 .prize__title::before {
   content: "";
   position: absolute;
@@ -300,7 +357,6 @@
   width: 581px;
   height: 581px;
   border-radius: 50%;
-  filter: blur(400px);
   z-index: -1;
 }
 @media screen and (max-width: 1024px) {
@@ -479,9 +535,108 @@
   animation-duration: 2s;
 }
 
+.draw__title {
+  margin: 30px 0 55px 0;
+}
+.draw__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.draw__slider {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 50px 0 50px 104px;
+}
+.draw__slider::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 2px;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 100%;
+  background: #044654;
+  border-radius: 100px;
+}
+.draw__slide:not(:last-child) {
+  margin-bottom: 30px;
+}
+.draw__slide_active .draw__slide-number {
+  color: #FAAF18;
+}
+.draw__slide_active .draw__slide-number::before {
+  background-color: #FAAF18;
+}
+.draw__slide_active .draw__slide-comment {
+  display: block;
+}
+.draw__slide-number {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 47px;
+  height: 40px;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 40px;
+  font-family: "Roboto Bold";
+  text-transform: none;
+  line-height: 100%;
+  color: #002138;
+}
+.draw__slide-number::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: -104px;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 40px;
+  background-color: transparent;
+  border-radius: 100px;
+}
+.draw__slide-comment {
+  display: none;
+  width: 420px;
+  margin-top: 15px;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 17px;
+  font-family: "Roboto Regular";
+  text-transform: none;
+  line-height: 150%;
+  color: #E4E4E4;
+}
+
+@font-face {
+  font-family: "Roboto Regular";
+  src: url("../fonts/roboto-regular/roboto-regular.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/roboto-regular/roboto-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto-regular/roboto-regular.otf") format("opentype"), url("../fonts/roboto-regular/roboto-regular.svg") format("svg"), url("../fonts/roboto-regular/roboto-regular.ttf") format("truetype"), url("../fonts/roboto-regular/roboto-regular.woff") format("woff"), url("../fonts/roboto-regular/roboto-regular.woff2") format("woff2");
+  /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto Bold";
+  src: url("../fonts/roboto-bold/roboto-bold.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/roboto-bold/roboto-bold.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto-bold/roboto-bold.otf") format("opentype"), url("../fonts/roboto-bold/roboto-bold.svg") format("svg"), url("../fonts/roboto-bold/roboto-bold.ttf") format("truetype"), url("../fonts/roboto-bold/roboto-bold.woff") format("woff"), url("../fonts/roboto-bold/roboto-bold.woff2") format("woff2");
+  /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
 body {
   font-family: "Roboto Bold";
   background-color: #001424;
+}
+
+::-moz-placeholder {
+  opacity: 1;
 }
 
 /*# sourceMappingURL=style.css.map */

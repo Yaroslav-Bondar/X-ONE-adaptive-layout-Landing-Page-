@@ -28,9 +28,6 @@
         @media screen and (max-width: $brkpoint-4) {
             font-size: 30px;
         }
-        &-color {
-            color: $accent;
-        }
     }
     &__title::before {
         content: '';
@@ -80,7 +77,7 @@
             width: 581px;
             height: 581px;
             border-radius: 50%;
-            filter: blur($decor-blur-xl);
+            // filter: blur($decor-blur-xl);
             z-index: -1;
             @media screen and(max-width: $brkpoint-1) {
                 width: 470px;

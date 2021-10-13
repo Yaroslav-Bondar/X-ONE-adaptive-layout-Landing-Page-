@@ -1,0 +1,86 @@
+.wrapper {
+    max-width: $wrapper-width;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.line {
+    width: 80px;
+    border: 5px solid $accent;
+    @media screen and (max-width: $brkpoint-2) {
+        width: 50px;
+        border: 3px solid $accent;
+    }
+}
+.btn {
+    @extend %center-xy-flex;
+    @include font(700, 23px, 125%, $main-background-color, $text-transform: uppercase, $family: 'Roboto Bold');
+    background: $accent;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+}
+.description {
+    width: 750px;
+    padding: 40px 80px;
+    @include font(400, 17px, 150%, $white, $family: 'Roboto Regular');
+    background: #002138;
+    border-radius: 25px;
+}
+.social {
+    display: flex;
+    & :not(:last-child) {
+        margin-right: 37px;
+    }
+    &__img {
+        width: 36px;
+        height: 36px;
+        &-item {
+            @extend %inner-img;
+        }
+    }
+}
+.accent__color {
+    color: $accent;
+}
+.title {
+    @include font(700, 45px, 120%, $white)
+}
+.form {
+    display: flex;
+    flex-flow: column;
+    width: 420px;
+    & :nth-child(1n):not(:last-child) {
+        margin-bottom: 30px;
+    }
+    &__input {
+        text-indent: 60px;
+        outline: none;
+        height: 85px;
+        background-color: transparent;
+        border-radius: 25px;
+        border: 1px solid $input-border-color;
+        transition-property: border-color, box-shadow;
+        transition: .2s;
+        @include font(400, 19px, 125%, $input-placeholder-color, $family: 'Roboto Regular');
+    }
+    &__input::placeholder,
+    &__input::-webkit-input-placeholder,
+    &__input::-moz-placeholder {
+        @include font(400, 19px, 125%, $input-placeholder-color, $family: 'Roboto Regular');
+    }
+    &__input:focus {
+        border: 1px solid $accent;
+    }
+    &__input:hover {
+        border: 1px solid transparent;
+        box-shadow: 0 0 10px 2px $logo;
+    }
+    &__btn {
+        height: 85px;
+    }
+}
+
+@keyframes fade {
+    0%   {opacity: 0.5;}
+    100% {opacity: 1; }
+}

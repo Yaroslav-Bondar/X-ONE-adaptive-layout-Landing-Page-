@@ -4,11 +4,18 @@
 @import 'common';
 @import 'header';
 @import 'prize';
+@import 'draw';
+@import 'fonts';
 
 body {
     font-family: "Roboto Bold";
     background-color: $main-background-color;    
 }
+// to fix the placeholder opacity in Firefox
+::-moz-placeholder { 
+    opacity: 1;
+}
+
 
 
 
