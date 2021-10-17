@@ -1,11 +1,32 @@
 .draw {
     padding: 50px 0 50px 0;
     &__title {
+        position: relative;
         margin: 30px 0 55px 0;
     }
+    &__title::before {
+        @include decor(398px, 398px, -123px, -175px, $decor-color-8, $decor-blur-xl);
+
+    }
     &__container {
+        position: relative;
         display: flex;
         align-items: center;
+        &::before {
+            @include decor(522px, 522px, 0, 80%, $decor-color-9, $decor-blur-xl);
+            @media screen and(max-width: $brkpoint-1) {
+                @include decor(385px, 385px, 0, 80%, $decor-color-9, $decor-blur-xl);
+            }
+            @media screen and(max-width: $brkpoint-1) {
+                @include decor(385px, 385px, 0, 80%, $decor-color-9, $decor-blur-xl);
+            }
+            @media screen and(max-width: $draw-brkpoint-2) {
+                @include decor(385px, 385px, 90%, 70%, $decor-color-9, $decor-blur-xl);
+            }
+            @media screen and(max-width: $brkpoint-3) {
+                @include decor(236px, 236px, 54%, 70%, $decor-color-9, $decor-blur-l);
+            }
+        }
         @media screen and(max-width: $draw-brkpoint-2) {
             flex-flow: column;
             align-items: normal;

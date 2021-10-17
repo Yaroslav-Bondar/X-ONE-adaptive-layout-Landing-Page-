@@ -9,3 +9,21 @@
     line-height: $line_height;
     color: $color;
   }
+
+@mixin decor($width, $height, $top, $left, $color, $blur, $content: '', $display: block, $pos: absolute, $radius: 50%, $z-index: -1) {
+    content: $content;
+    display: $display;
+    width: $width;
+    height: $height;
+    position: $pos;
+    top: $top;
+    left: $left;
+    border: {
+        radius: $radius;
+    }
+    background: {
+        color: $color;
+    };
+    filter: blur($blur);
+    z-index: $z-index;
+}  
