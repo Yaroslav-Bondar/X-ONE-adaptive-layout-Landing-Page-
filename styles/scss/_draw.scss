@@ -6,7 +6,9 @@
     }
     &__title::before {
         @include decor(398px, 398px, -123px, -175px, $decor-color-8, $decor-blur-xl);
-
+        @media screen and(max-width: $brkpoint-4) {
+            @include decor(197px, 197px, -123px, -80px, $decor-color-8, $decor-blur-m);
+        }
     }
     &__container {
         position: relative;

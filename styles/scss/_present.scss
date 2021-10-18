@@ -1,0 +1,55 @@
+.present {
+    &__conteiner {
+        display: flex;
+    }
+    &__block1,
+    &__block2 {
+        width: 50%;
+    }
+    &__block2 {
+        position: relative;
+    }
+    &__block1 {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+    }
+    &__form {
+        &-wrap {
+            position: relative;
+        }
+        &-descr {
+            position: absolute;
+            width: 310px;
+            top: 50%;
+            left: 105%;
+            transform: translateY(-50%);
+            @include font(400, 15px, 125%, $gray-to-rgba, $family: 'Roboto Regular');
+        }
+    }
+    &__input {
+        &[type='number']::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+        &[type='number'] {
+            width: 100%;
+            margin: 0 !important;
+        }
+    }
+    &__present {
+        width: 330px;
+        height: 648px;
+        margin-left: auto;
+        &-img {
+            @extend %inner-img;
+
+
+        }
+        &-descr {
+            position: absolute;
+            bottom: 90px;
+            right: 0;
+            // float: left;
+        }
+    }
+}
