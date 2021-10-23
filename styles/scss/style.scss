@@ -1,12 +1,12 @@
-@import 'var';
-@import 'mixins';
-@import 'extends';
-@import 'common';
-@import 'header';
-@import 'prize';
-@import 'draw';
-@import 'fonts';
-@import 'present';
+@import 'data/var';
+@import 'utils/mixins';
+@import 'utils/extends';
+@import 'commons/common';
+@import 'sections/header';
+@import 'sections/prize';
+@import 'sections/draw';
+@import 'data/fonts';
+@import 'sections/present';
 
 body {
     font-family: "Roboto Bold";
