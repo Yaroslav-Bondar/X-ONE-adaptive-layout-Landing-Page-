@@ -1,0 +1,31 @@
+.footer {
+    padding: 60px 0;
+    background-color: $footer-bg-color;
+    &__container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+    &__logo1 {
+        margin-right: 30px;
+    }
+    &__rules,
+    &__social {
+        display: flex;
+        align-items: center;
+    }
+    &__rules {
+        text-decoration: none;
+        &-item {
+            @include font(400, 20px, 150%, $white, $family: 'Gilroy-Regular');
+        }
+        &-line {
+            height: 1px;
+            width: 100%;
+            margin-top: 10px;
+            background-color: $white;
+        }
+    }
+    &__social {
+        justify-content: flex-end;
+    }
+}

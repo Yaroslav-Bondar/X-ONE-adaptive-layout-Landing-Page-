@@ -11,8 +11,8 @@ let prizeTitle = document.querySelector('.prize__title')
 let prizeBlock2 = document.querySelector('.prize__block2')
 
 let slideIndex = 1
-let overlapA
-let overlapB
+let overlapA  // variable for new Overlap
+let overlapB  // variable for new Overlap
 let isOverlap = false
 // set the same height for all slides
 
@@ -44,6 +44,10 @@ function addClass(obj, name) {
     obj[slideIndex - 1].classList.add(name)
   }
 }
+const prizeBetweenA = new prizeGap(prizeDescribe, prizeSlideDescrips[slideIndex - 1], 40, 50);
+// console.log(prizeBetweenA.checkGapX())
+prizeBetweenA.setGapBothX(prizeBetweenA.checkGapX())
+// console.log(prizeBetweenA.checkGapY())
 function showSlides (n) {
   // spin slides in a circle
   if(n > prizeSlides.length) slideIndex = 1
@@ -59,29 +63,40 @@ function showSlides (n) {
   prizeDot[slideIndex - 1].classList.add('prize__dot_active')
 
   // eliminate the intersection with the current slide
-  overlapA = new Overlap(prizeDescribe, prizeSlideDescrips[slideIndex - 1], 50)
-  overlapA.changeOverlap()
-  setIsOverlap(overlapA.isOverlap)
+  
+  // overlapA = new Overlap(prizeDescribe, prizeSlideDescrips[slideIndex - 1], 50)
+  // overlapA.changeOverlap()
+  // setIsOverlap(overlapA.isOverlap)
   // eliminate the intersection with the current slide
-  overlapB = new Overlap(prizeTitle, prizeSlideDescrips[slideIndex - 1], 50)
-  overlapB.changeOverlap()
-  setIsOverlap(overlapB.isOverlap)
+  // overlapB = new Overlap(prizeTitle, prizeSlideDescrips[slideIndex - 1], 50)
+  // overlapB.changeOverlap()
+  // setIsOverlap(overlapB.isOverlap)
 }
-showSlides(slideIndex)
+showSlides(slideIndex);
 
 // we eliminate the intersection and adjust the indentation with 
 // the current slide when resizing the browser window
-window.addEventListener('resize', ()=> {
-    overlapA.changeOverlap()
-    overlapB.changeOverlap()
-    if(isOverlap) {
-        overlapA.killGap()
-    }
-    if(isOverlap) {
-        overlapB.killGap()
-    }
+function resize(ab = prizeBetweenA.checkGapX, b = prizeBetweenA.checkGapX()) {
+  prizeBetweenA.setGapBothX(b);
+  console.log('b', b)
+}
+// resize()
+// window.addEventListener('resize', resize
+// ()=> 
+// {
+  // prizeBetweenA.setGapBothX(prizeBetweenA.checkGapX())
+
+    // overlapA.changeOverlap()
+    // overlapB.changeOverlap()
+    // if(isOverlap) {
+    //     overlapA.killGap()
+    // }
+    // if(isOverlap) {
+    //     overlapB.killGap()
+    // }
     // prizeBlock2.style.height = getMaxHeight(prizeSlides) + 'px'
-})
+// }
+// )
 
 // click on slider conteiner
 prizeSlider.addEventListener('click', (e)=> {
