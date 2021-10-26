@@ -76,15 +76,15 @@ showSlides(slideIndex);
 
 // we eliminate the intersection and adjust the indentation with 
 // the current slide when resizing the browser window
-function resize(ab = prizeBetweenA.checkGapX, b = prizeBetweenA.checkGapX()) {
-  prizeBetweenA.setGapBothX(b);
-  console.log('b', b)
-}
-// resize()
-// window.addEventListener('resize', resize
-// ()=> 
-// {
-  // prizeBetweenA.setGapBothX(prizeBetweenA.checkGapX())
+// function resize(ab = prizeBetweenA.checkGapX, b = prizeBetweenA.checkGapX()) {
+//   prizeBetweenA.setGapBothX(b);
+//   console.log('b', b)
+// }
+// resize() resize
+window.addEventListener('resize', 
+()=> 
+{
+  prizeBetweenA.setGapBothX(prizeBetweenA.checkGapX())
 
     // overlapA.changeOverlap()
     // overlapB.changeOverlap()
@@ -95,8 +95,8 @@ function resize(ab = prizeBetweenA.checkGapX, b = prizeBetweenA.checkGapX()) {
     //     overlapB.killGap()
     // }
     // prizeBlock2.style.height = getMaxHeight(prizeSlides) + 'px'
-// }
-// )
+}
+)
 
 // click on slider conteiner
 prizeSlider.addEventListener('click', (e)=> {
