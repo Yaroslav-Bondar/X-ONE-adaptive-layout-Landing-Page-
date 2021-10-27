@@ -1,4 +1,4 @@
-const SMALL = 'gap is small';
-const BIG = 'gap is big';
-const INTERSECTION = 'intersection';
-const ZERO = 'gap is 0';
+const X_SMALL = 'gapX is small';
+const X_BIG = 'gapX is big';
+const X_INTERSECTION = 'intersectionX';
+const X_ZERO = 'gapX is 0';

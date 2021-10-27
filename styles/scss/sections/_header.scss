@@ -23,10 +23,6 @@
         background-color: #002138;
     }
     &__social-img {
-        @media screen and (max-width: $brkpoint-2) {
-            width: 25px;
-            height: 25px;
-        }
         @media screen and (max-width: $brkpoint-4) {
             width: 20px;
             height: 20px;

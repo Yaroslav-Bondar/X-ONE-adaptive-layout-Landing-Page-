@@ -85,7 +85,6 @@ window.addEventListener('resize',
 ()=> 
 {
   prizeBetweenA.setGapBothX(prizeBetweenA.checkGapX())
-
     // overlapA.changeOverlap()
     // overlapB.changeOverlap()
     // if(isOverlap) {
