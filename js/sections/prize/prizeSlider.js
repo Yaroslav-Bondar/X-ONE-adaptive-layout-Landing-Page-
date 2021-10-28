@@ -46,7 +46,8 @@ function addClass(obj, name) {
 }
 const prizeBetweenA = new prizeGap(prizeDescribe, prizeSlideDescrips[slideIndex - 1], 40, 50);
 // console.log(prizeBetweenA.checkGapX())
-prizeBetweenA.setGapBothX(prizeBetweenA.checkGapX())
+// prizeBetweenA.setGapBothX(prizeBetweenA.checkGap('x'))
+prizeBetweenA.setGapOneX(prizeBetweenA.checkGap('x'), prizeSlideDescrips[slideIndex - 1]);
 // console.log(prizeBetweenA.checkGapY())
 function showSlides (n) {
   // spin slides in a circle
@@ -84,8 +85,10 @@ showSlides(slideIndex);
 window.addEventListener('resize', 
 ()=> 
 {
-  prizeBetweenA.setGapBothX(prizeBetweenA.checkGapX())
-
+  // prizeBetweenA.setGapBothX(prizeBetweenA.checkGapX())
+  // prizeBetweenA.setGapBothX(prizeBetweenA.checkGap('x'))
+  // prizeBetweenA.setGapOneX(prizeBetweenA.checkGap('x'));
+  prizeBetweenA.setGapOneX(prizeBetweenA.checkGap('x'), prizeSlideDescrips[slideIndex - 1]);
     // overlapA.changeOverlap()
     // overlapB.changeOverlap()
     // if(isOverlap) {

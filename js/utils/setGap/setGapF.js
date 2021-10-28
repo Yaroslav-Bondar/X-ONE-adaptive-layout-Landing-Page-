@@ -6,6 +6,8 @@ function Gap(objA, objB, gapX, gapY) {
     this.objB = objB;
     this.gapX = gapX;
     this.gapY = gapY;
+    this.gapDifferenceX = this.getCoords(this.objB).coords.left - this.getCoords(this.objA).coords.right;
+    this.gapDifferenceY = this.getCoords(this.objB).coords.top - this.getCoords(this.objA).coords.bottom;
 }
 
 Gap.prototype.getCoords = function(obj) {
@@ -13,48 +15,60 @@ Gap.prototype.getCoords = function(obj) {
         coords: obj.getBoundingClientRect(),
     }
 }
-Gap.prototype.checkGapX = function() {
-    let gapX = Gap.prototype.getCoords(this.objB).coords.left - Gap.prototype.getCoords(this.objA).coords.right;
-    console.log('checkGapX', gapX);
-    // console.log('this.gapX = ', this.gapX);
-    if (gapX == this.gapX) return false;
-    if(gapX >= 0) {
-        console.log('gapX >= 0');
-        if(gapX < this.gapX) {
+Gap.prototype.checkGap = function(axis) {
+    let gap, gapDifference;
+    if(axis === 'x') {
+        gap = this.gapX;
+        gapDifference = Gap.prototype.getCoords(this.objB).coords.left - Gap.prototype.getCoords(this.objA).coords.right; 
+    }
+    else if(axis === 'y') {
+        gap = this.gapY;
+        gapDifference = Gap.prototype.getCoords(this.objB).coords.top - Gap.prototype.getCoords(this.objA).coords.bottom;
+    }
+    else {
+        console.log("checkGap: wrong function parameter !!! should be a string 'x' or 'y'");
+        return;
+    }
+
+    // let gapX = Gap.prototype.getCoords(this.objB).coords.left - Gap.prototype.getCoords(this.objA).coords.right;
+    console.log('checkGap', gapDifference);
+    // console.log('this.gapX = ', gap);
+    if (gapDifference == gap) return false;
+    if(gapDifference >= 0) {
+        console.log('gapDifference >= 0');
+        if(gapDifference < gap) {
             console.log(SMALL);
-            return { type: SMALL, value: gapX };
+            return { type: SMALL, value: gapDifference, axis: axis };
         }
-        if(gapX > this.gapX) {
+        if(gapDifference > gap) {
             console.log(BIG);
-            return { type: BIG, value: gapX };
+            return { type: BIG, value: gapDifference , axis: axis};
         }
-        if(gapX == 0) {
+        if(gapDifference == 0) {
             console.log(ZERO);
-            return { type: ZERO, value: gapX };
+            return { type: ZERO, value: gapDifference , axis: axis};
         }
     }
-    if(gapX < 0 ) {
+    if(gapDifference < 0 ) {
         console.log(INTERSECTION);
-        return { type: INTERSECTION, value: gapX };
+        return { type: INTERSECTION, value: gapDifference , axis: axis};
     }
 }
 Gap.prototype.setGapBothX = function(gapX) {
     // let gapX = Gap.prototype.getCoords(this.objB).coords.left - Gap.prototype.getCoords(this.objA).coords.right;
     // if gapX == this.gapX - do nothing
     if(!gapX) return
+    if(gapX.axis !== 'x') {
+        console.log("setGapBothX: wrong function parameter when calling the checkGap function !!! should be a string 'x'");
+        return;
+    }
     // console.log('setGapBothX - gapX', gapX);
     if(gapX.type === INTERSECTION) {
         console.log(gapX.type);
         console.log(Gap.prototype.getCoords(this.objB).coords.left - Gap.prototype.getCoords(this.objA).coords.right);
-        // console.log(INTERSECTION);
-        // console.log(Math.abs(obj.value)/2);
-        // console.log(this.gapX);
-        // console.log(this.objA.style.width = '20px');
         let difference = Math.abs(gapX.value)/2 + this.gapX/2;
         console.log('difference', difference);
-        // this.objA.style.width = this.objA.offsetWidth - Math.abs(gapX.value)/2 - this.gapX/2 + 'px';
         this.objA.style.width = this.objA.offsetWidth - difference + 'px';
-        // this.objB.style.width = this.objB.offsetWidth - Math.abs(gapX.value)/2 - this.gapX/2 + 'px';
         this.objB.style.width = this.objB.offsetWidth - difference + 'px';
         console.log(Gap.prototype.getCoords(this.objB).coords.left - Gap.prototype.getCoords(this.objA).coords.right);
     }
@@ -80,15 +94,40 @@ Gap.prototype.setGapBothX = function(gapX) {
         console.log(Gap.prototype.getCoords(this.objB).coords.left - Gap.prototype.getCoords(this.objA).coords.right);
     }
 }
-Gap.prototype.checkGapY = function() {
-    let gapY = Gap.prototype.getCoords(this.objB).coords.top - Gap.prototype.getCoords(this.objA).coords.bottom;
-    if(gapY < this.gapY) {
-        return false;
+Gap.prototype.setGapOneX = function(gapX, obj) {
+    if(!gapX) return
+    if(gapX.axis !== 'x') {
+        console.log("setGapBothX: wrong function parameter when calling the checkGap function !!! should be a string 'x'");
+        return;
     }
-    else if(gapY > this.gapY) {
-        return true;
-    } 
-}
+    if(gapX.type === INTERSECTION) {
+        console.log('setGapOneX = ', gapX.type);
+        console.log('setGapOneX = ', gapX.value);
+        let difference = Math.abs(gapX.value) + this.gapX;
+        obj.style.width = obj.offsetWidth - difference + 'px';
+        console.log('setGapOneX = ', Gap.prototype.getCoords(this.objB).coords.left - Gap.prototype.getCoords(this.objA).coords.right);
+    }
+    if(gapX.type === SMALL) {
+        console.log('setGapOneX = ', gapX.type);
+        console.log('setGapOneX = ', gapX.value);
+        let difference = this.gapX - gapX.value;
+        obj.style.width = obj.offsetWidth - difference + 'px';
+        console.log('setGapOneX = ', Gap.prototype.getCoords(this.objB).coords.left - Gap.prototype.getCoords(this.objA).coords.right);
+    }
+    if(gapX.type === BIG) {
+        console.log('setGapOneX = ', gapX.type);
+        console.log('setGapOneX = ', gapX.value);
+        let difference = gapX.value - this.gapX;
+        obj.style.width = obj.offsetWidth + difference + 'px';
+        console.log('setGapOneX = ', Gap.prototype.getCoords(this.objB).coords.left - Gap.prototype.getCoords(this.objA).coords.right);
+    }
+    if(gapX.type === ZERO) {
+        console.log('setGapOneX = ', gapX.type);
+        console.log('setGapOneX = ', gapX.value);
+        obj.style.width = obj.offsetWidth - this.gapX + 'px';
+        console.log('setGapOneX = ', Gap.prototype.getCoords(this.objB).coords.left - Gap.prototype.getCoords(this.objA).coords.right);
+    }
+} 
 
 function prizeGap(objA, objB, gapX, gapY) {
     Gap.call(this, objA, objB, gapX, gapY);
