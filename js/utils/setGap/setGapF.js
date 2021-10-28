@@ -75,22 +75,24 @@ Gap.prototype.setGapBothX = function(gapX) {
     if(gapX.type === SMALL) {
         console.log(gapX.type);
         console.log(Gap.prototype.getCoords(this.objB).coords.left - Gap.prototype.getCoords(this.objA).coords.right);
-        this.objA.style.width = (this.objA.offsetWidth - (this.gapX - gapX.value) / 2) + 'px';
-        this.objB.style.width = (this.objB.offsetWidth - (this.gapX - gapX.value) / 2) + 'px';
+        let difference = (this.gapX - gapX.value) / 2; 
+        this.objA.style.width = this.objA.offsetWidth - difference + 'px';
+        this.objB.style.width = this.objB.offsetWidth - difference + 'px';
         console.log(Gap.prototype.getCoords(this.objB).coords.left - Gap.prototype.getCoords(this.objA).coords.right);
     }
     if(gapX.type === BIG) {
         console.log(gapX.type);
         console.log(Gap.prototype.getCoords(this.objB).coords.left - Gap.prototype.getCoords(this.objA).coords.right);
-        this.objA.style.width = this.objA.offsetWidth + (gapX.value - this.gapX) / 2 + 'px';
-        this.objB.style.width = this.objB.offsetWidth + (gapX.value - this.gapX) / 2 + 'px';
+        let difference = (gapX.value - this.gapX) / 2;
+        this.objA.style.width = this.objA.offsetWidth + difference + 'px';
+        this.objB.style.width = this.objB.offsetWidth + difference + 'px';
         console.log(Gap.prototype.getCoords(this.objB).coords.left - Gap.prototype.getCoords(this.objA).coords.right);
     }
     if(gapX.type === ZERO) {
         console.log(gapX.type);
         console.log(Gap.prototype.getCoords(this.objB).coords.left - Gap.prototype.getCoords(this.objA).coords.right);
-        this.objA.style.width = this.objA.offsetWidth + this.gapX / 2 + 'px';
-        this.objB.style.width = this.objB.offsetWidth + this.gapX / 2 + 'px';
+        this.objA.style.width = this.objA.offsetWidth - this.gapX / 2 + 'px';
+        this.objB.style.width = this.objB.offsetWidth - this.gapX / 2 + 'px';
         console.log(Gap.prototype.getCoords(this.objB).coords.left - Gap.prototype.getCoords(this.objA).coords.right);
     }
 }

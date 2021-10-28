@@ -511,7 +511,7 @@
 }
 @media screen and (max-width: 1024px) {
   .prize__slide-descrip {
-    width: 100%;
+    width: 100% !important;
   }
 }
 @media screen and (max-width: 768px) {

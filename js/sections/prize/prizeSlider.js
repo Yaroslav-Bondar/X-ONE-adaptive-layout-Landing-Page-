@@ -14,8 +14,10 @@ let slideIndex = 1
 let overlapA  // variable for new Overlap
 let overlapB  // variable for new Overlap
 let isOverlap = false
+const prizeGapWidth = 1024; // used the value from media queries in _prize.scss file 
+//  = getComputedStyle(document.documentElement).getPropertyValue('--prize-gap-width');
 // set the same height for all slides
-
+// console.log('prizeGapWidth = ', prizeGapWidth);
 // function getMaxHeight(obj) {
 //   let slidesHeight = new Array()
 //   for (const item of obj) {
@@ -44,10 +46,18 @@ function addClass(obj, name) {
     obj[slideIndex - 1].classList.add(name)
   }
 }
+
 const prizeBetweenA = new prizeGap(prizeDescribe, prizeSlideDescrips[slideIndex - 1], 40, 50);
+const prizeBetweenB = new prizeGap(prizeDescribe, prizeSlideDescrips[1], 40, 50);
+// console.log(prizeSlideDescrips[0].offsetWidth);
+// console.log(prizeSlideDescrips[1].offsetWidth);
+console.log(prizeBetweenB.checkGap('x'))
 // console.log(prizeBetweenA.checkGapX())
-// prizeBetweenA.setGapBothX(prizeBetweenA.checkGap('x'))
-prizeBetweenA.setGapOneX(prizeBetweenA.checkGap('x'), prizeSlideDescrips[slideIndex - 1]);
+if(window.innerWidth > prizeGapWidth) {
+  prizeBetweenA.setGapBothX(prizeBetweenA.checkGap('x'))
+  prizeBetweenB.setGapBothX(prizeBetweenB.checkGap('x'))
+}
+// prizeBetweenA.setGapOneX(prizeBetweenA.checkGap('x'), prizeSlideDescrips[slideIndex - 1]);
 // console.log(prizeBetweenA.checkGapY())
 function showSlides (n) {
   // spin slides in a circle
@@ -87,8 +97,13 @@ window.addEventListener('resize',
 {
   // prizeBetweenA.setGapBothX(prizeBetweenA.checkGapX())
   // prizeBetweenA.setGapBothX(prizeBetweenA.checkGap('x'))
+  
+  if(window.innerWidth > prizeGapWidth) {
+    prizeBetweenA.setGapBothX(prizeBetweenA.checkGap('x'))
+    // prizeBetweenB.setGapBothX(prizeBetweenB.checkGap('x'))
+  }
   // prizeBetweenA.setGapOneX(prizeBetweenA.checkGap('x'));
-  prizeBetweenA.setGapOneX(prizeBetweenA.checkGap('x'), prizeSlideDescrips[slideIndex - 1]);
+  // prizeBetweenA.setGapOneX(prizeBetweenA.checkGap('x'), prizeSlideDescrips[slideIndex - 1]);
     // overlapA.changeOverlap()
     // overlapB.changeOverlap()
     // if(isOverlap) {
