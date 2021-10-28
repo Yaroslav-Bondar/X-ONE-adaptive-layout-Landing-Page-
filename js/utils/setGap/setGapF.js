@@ -83,8 +83,8 @@ Gap.prototype.setGapBothX = function(gapX) {
         console.log(gapX.type);
         console.log(Gap.prototype.getCoords(this.objB).coords.left - Gap.prototype.getCoords(this.objA).coords.right);
         let difference = this.gapX / 2;
-        this.objA.style.width = this.objA.offsetWidth + difference + 'px';
-        this.objB.style.width = this.objB.offsetWidth + difference + 'px';
+        this.objA.style.width = this.objA.offsetWidth - difference + 'px';
+        this.objB.style.width = this.objB.offsetWidth - difference + 'px';
         console.log(Gap.prototype.getCoords(this.objB).coords.left - Gap.prototype.getCoords(this.objA).coords.right);
     }
 }
