@@ -16,7 +16,7 @@ let slideIndex = 1
 // let isOverlap = false
 const prizeGapWidth = 1024; // used the value from media queries in _prize.scss file
 let prizeGapA
-let prizeGapB 
+// let prizeGapB 
 function prizeCheckGapAY(obj) {
   // prizeCheckGapAY = obj.checkGap('y');
   let gapType;

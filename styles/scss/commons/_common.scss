@@ -30,6 +30,9 @@
     display: flex;
     & :not(:last-child) {
         margin-right: 37px;
+        @media screen and (max-width: $brkpoint-3) {
+            margin-right: 20px;
+        }
     }
     &__img {
         width: 36px;
@@ -38,10 +41,14 @@
             width: 30px;
             height: 30px;
         }
-        // @media screen and (max-width: $brkpoint-4) {
-        //     width: 20px;
-        //     height: 20px;
-        // }
+        @media screen and (max-width: $brkpoint-3) {
+            width: 25px;
+            height: 25px;
+        }
+        @media screen and (max-width: $brkpoint-4) {
+            width: 21px;
+            height: 21px;
+        }
         &-item {
             @extend %inner-img;
         }

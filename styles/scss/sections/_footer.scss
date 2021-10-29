@@ -48,6 +48,9 @@
     }
     &__logo1 {
         margin-right: 30px;
+        @media screen and (max-width: $brkpoint-1) {
+            margin-right: 21px;
+        }
     }
     &__rules,
     &__social {
@@ -63,6 +66,12 @@
             @include font(400, 20px, 150%, $white, $family: 'Gilroy-Regular');
             @media screen and (max-width: $brkpoint-2) {
                 font-size: 15px;
+            }
+            @media screen and (max-width: $brkpoint-2) {
+                font-size: 13px;
+            }
+            @media screen and (max-width: $brkpoint-2) {
+                font-size: 12px;
             }
         }
         &-line {
