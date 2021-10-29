@@ -27,32 +27,34 @@ Gap.prototype.checkGap = function(axis) {
     }
     else {
         console.log("checkGap: wrong function parameter !!! should be a string 'x' or 'y'");
-        return;
+        return false;
     }
 
     // let gapX = Gap.prototype.getCoords(this.objB).coords.left - Gap.prototype.getCoords(this.objA).coords.right;
     console.log('checkGap', gapDifference);
+    console.log('checkGap', axis);
     // console.log('this.gapX = ', gap);
-    if (gapDifference == gap) return false;
+    if(gapDifference == gap) return false;
     if(gapDifference >= 0) {
         console.log('gapDifference >= 0');
         if(gapDifference < gap) {
-            console.log(SMALL);
+            console.log('checkGap', SMALL);
             return { type: SMALL, value: gapDifference, axis: axis };
         }
         if(gapDifference > gap) {
-            console.log(BIG);
+            console.log('checkGap', BIG);
             return { type: BIG, value: gapDifference , axis: axis};
         }
         if(gapDifference == 0) {
-            console.log(ZERO);
+            console.log('checkGap', ZERO);
             return { type: ZERO, value: gapDifference , axis: axis};
         }
     }
     if(gapDifference < 0 ) {
-        console.log(INTERSECTION);
+        console.log('checkGap', INTERSECTION);
         return { type: INTERSECTION, value: gapDifference , axis: axis};
     }
+    return false;
 }
 Gap.prototype.setGapBothX = function(gapX) {
     // let gapX = Gap.prototype.getCoords(this.objB).coords.left - Gap.prototype.getCoords(this.objA).coords.right;
