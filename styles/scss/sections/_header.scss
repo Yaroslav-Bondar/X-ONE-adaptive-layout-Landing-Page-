@@ -22,18 +22,4 @@
         width: calc(#{$wrapper-width} - 30px);
         background-color: #002138;
     }
-    &__social-img {
-
-    }
-    // &__social-img:not(:last-child) {
-    //     @media screen and (max-width: $brkpoint-2) {
-    //         margin-right: 28px;
-    //     }
-    //     @media screen and (max-width: $brkpoint-3) {
-    //         margin-right: 4px;
-    //     }
-    //     @media screen and (max-width: $brkpoint-4) {
-    //         margin-right: 17px;
-    //     }
-    // }
 }

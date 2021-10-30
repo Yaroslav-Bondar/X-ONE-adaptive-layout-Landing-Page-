@@ -158,6 +158,51 @@
         @extend %inner-img;
     }
 }
+.modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    @extend %center-xy-flex;
+    &__container {
+        position: relative;
+        border-radius: 25px;
+        background-color: $slide-not-active-color;
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: $white url('../img/modal/close.svg') no-repeat center;
+            cursor: pointer;
+            overflow: hidden; 
+        }
+    }
+    &__title {
+        @include font(bold, 35px, 120%, $accent);
+    }
+    &_txt {
+        padding: 70px 110px;
+        width: 710px;
+    }
+    &-info {
+        &__title {
+            margin-bottom: 25px;
+        }
+        &__message {
+            @include font(normal, 17px, 150%, $white, $family: 'Roboto Regular');
+            & > p {
+                margin-top: 20px;
+            }
+        }
+    }
+} 
 @keyframes fade {
     0%   {opacity: 0.5;}
     100% {opacity: 1; }

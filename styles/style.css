@@ -17,7 +17,7 @@
   font-style: normal;
 }
 @font-face {
-  font-family: "Gilroy-Regular";
+  font-family: "Gilroy Regular";
   src: url("../fonts/gilroy-regular/gilroy-regular.eot");
   /* IE 9 Compatibility Mode */
   src: url("../fonts/gilroy-regular/gilroy-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/gilroy-regular/gilroy-regular.woff2") format("woff2"), url("../fonts/gilroy-regular/gilroy-regular.woff") format("woff"), url("../fonts/gilroy-regular/gilroy-regular.ttf") format("truetype"), url("../fonts/gilroy-regular/gilroy-regular.svg#gilroy-regular") format("svg");
@@ -30,7 +30,7 @@
   object-fit: contain;
 }
 
-.btn {
+.modal, .btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -249,6 +249,61 @@
     height: 19px;
   }
 }
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+}
+.modal__container {
+  position: relative;
+  border-radius: 25px;
+  background-color: #002138;
+}
+.modal__container::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #FFFFFF url("../img/modal/close.svg") no-repeat center;
+  cursor: pointer;
+  overflow: hidden;
+}
+.modal__title {
+  font-weight: bold;
+  font-style: normal;
+  font-size: 35px;
+  font-family: "Roboto Bold";
+  text-transform: none;
+  line-height: 120%;
+  color: #FAAF18;
+}
+.modal_txt {
+  padding: 70px 110px;
+  width: 710px;
+}
+.modal-info__title {
+  margin-bottom: 25px;
+}
+.modal-info__message {
+  font-weight: normal;
+  font-style: normal;
+  font-size: 17px;
+  font-family: "Roboto Regular";
+  text-transform: none;
+  line-height: 150%;
+  color: #FFFFFF;
+}
+.modal-info__message > p {
+  margin-top: 20px;
+}
+
 @keyframes fade {
   0% {
     opacity: 0.5;
@@ -286,6 +341,7 @@
   width: calc(1300px - 30px);
   background-color: #002138;
 }
+
 .prize {
   padding-bottom: 50px;
 }
@@ -915,7 +971,7 @@
   font-weight: 400;
   font-style: normal;
   font-size: 20px;
-  font-family: "Gilroy-Regular";
+  font-family: "Gilroy Regular";
   text-transform: none;
   line-height: 150%;
   color: #FFFFFF;
