@@ -159,6 +159,7 @@
     }
 }
 .modal {
+    display: none;
     position: absolute;
     top: 0;
     left: 0;
@@ -171,17 +172,19 @@
         border-radius: 25px;
         background-color: $slide-not-active-color;
         &::before {
-            content: '';
-            display: block;
-            position: absolute;
-            top: -30px;
-            right: -30px;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: $white url('../img/modal/close.svg') no-repeat center;
-            cursor: pointer;
-            overflow: hidden; 
+            // content: '';
+            // display: block;
+            // position: absolute;
+            // top: -30px;
+            // right: -30px;
+            // width: 60px;
+            // height: 60px;
+            // border-radius: 50%;
+            // background: $white url('../img/modal/close.svg') no-repeat center;
+            // cursor: pointer;
+            // overflow: hidden;
+            @include decor(60px, 60px, -30px, initial, $white, 0, $z-index: initial, $bgimage: url('../img/modal/close.svg'),
+            $cursor:pointer, $right: -30px);
         }
     }
     &__title {
@@ -197,7 +200,7 @@
         }
         &__message {
             @include font(normal, 17px, 150%, $white, $family: 'Roboto Regular');
-            & > p {
+            & > p:first-child {
                 margin-top: 20px;
             }
         }

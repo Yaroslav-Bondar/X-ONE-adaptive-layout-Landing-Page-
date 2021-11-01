@@ -10,6 +10,14 @@ function Gap(objA, objB, gapX, gapY) {
     this.gapDifferenceY = this.getCoords(this.objB).coords.top - this.getCoords(this.objA).coords.bottom;
 }
 
+Gap.prototype.resetGap = function(obj1, obj2) {
+        if(obj1) {
+            obj1.style.width = '';
+        }
+        if(obj2) {
+            obj2.style.width = '';
+        }
+}
 Gap.prototype.getCoords = function(obj) {
     return {
         coords: obj.getBoundingClientRect(),
@@ -30,28 +38,24 @@ Gap.prototype.checkGap = function(axis) {
         return false;
     }
 
-    // let gapX = Gap.prototype.getCoords(this.objB).coords.left - Gap.prototype.getCoords(this.objA).coords.right;
-    console.log('checkGap', gapDifference);
-    console.log('checkGap', axis);
-    // console.log('this.gapX = ', gap);
     if(gapDifference == gap) return false;
     if(gapDifference >= 0) {
         console.log('gapDifference >= 0');
         if(gapDifference < gap) {
-            console.log('checkGap', SMALL);
+            // console.log('checkGap', SMALL);
             return { type: SMALL, value: gapDifference, axis: axis };
         }
         if(gapDifference > gap) {
-            console.log('checkGap', BIG);
+            // console.log('checkGap', BIG);
             return { type: BIG, value: gapDifference , axis: axis};
         }
         if(gapDifference == 0) {
-            console.log('checkGap', ZERO);
+            // console.log('checkGap', ZERO);
             return { type: ZERO, value: gapDifference , axis: axis};
         }
     }
     if(gapDifference < 0 ) {
-        console.log('checkGap', INTERSECTION);
+        // console.log('checkGap', INTERSECTION);
         return { type: INTERSECTION, value: gapDifference , axis: axis};
     }
     return false;
@@ -142,41 +146,4 @@ Object.defineProperty(prizeGap.prototype, 'constructor', {
     enumerable: false,
     writable: true,
 });
-
-function Overlap(objA, objB, gap) {
-    this.objA = objA
-    this.objB = objB
-    this.gap = gap
-    this.isOverlap = false
-    
-    getCoords = function(obj) {
-        return {
-            coords: obj.getBoundingClientRect(),
-        }
-    }
-    // if objects intersect horizontally and vertically return true
-    this.checkOverlap = function() {
-        let overlapX = getCoords(this.objA).coords.right - getCoords(this.objB).coords.left
-        let overlapY = getCoords(this.objA).coords.bottom - getCoords(this.objB).coords.top 
-        return overlapX > 0 && overlapY > 0 ? true : false
-    }
-    // remove the amount of intersection and add padding
-    this.killOverlap = function() {
-        let overlapX = getCoords(this.objA).coords.right - getCoords(this.objB).coords.left
-        this.objA.style.width = this.objA.offsetWidth - overlapX - this.gap + 'px'
-    }
-    this.changeOverlap = function() {
-        if(this.checkOverlap()) {
-            this.killOverlap()  
-            this.isOverlap = true
-        }
-    }
-    // if the indent between blocks is greater than this.gap, set it to this.gap
-    this.killGap = function() {
-        let overlapX = getCoords(this.objA).coords.right - getCoords(this.objB).coords.left
-        if(overlapX < (this.gap * -1)) {
-            this.objA.style.width = this.objA.offsetWidth + ((overlapX - (this.gap * -1)) * -1) + 'px'   
-        }
-    }
-}
 

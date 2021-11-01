@@ -250,6 +250,7 @@
   }
 }
 .modal {
+  display: none;
   position: absolute;
   top: 0;
   left: 0;
@@ -265,13 +266,19 @@
 .modal__container::before {
   content: "";
   display: block;
-  position: absolute;
-  top: -30px;
-  right: -30px;
   width: 60px;
   height: 60px;
+  position: absolute;
+  top: -30px;
+  left: initial;
+  right: -30px;
   border-radius: 50%;
-  background: #FFFFFF url("../img/modal/close.svg") no-repeat center;
+  background-color: #FFFFFF;
+  background-image: url("../img/modal/close.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: blur(0);
+  z-index: initial;
   cursor: pointer;
   overflow: hidden;
 }
@@ -300,7 +307,7 @@
   line-height: 150%;
   color: #FFFFFF;
 }
-.modal-info__message > p {
+.modal-info__message > p:first-child {
   margin-top: 20px;
 }
 
@@ -401,10 +408,16 @@
   position: absolute;
   top: -111px;
   left: -68px;
+  right: initial;
   border-radius: 50%;
   background-color: rgba(250, 175, 24, 0.56);
+  background-image: initial;
+  background-repeat: no-repeat;
+  background-position: center;
   filter: blur(350px);
   z-index: -1;
+  cursor: initial;
+  overflow: hidden;
 }
 .prize__describe {
   margin-top: 34px;
@@ -646,10 +659,16 @@
   position: absolute;
   top: -123px;
   left: -175px;
+  right: initial;
   border-radius: 50%;
   background-color: rgba(113, 37, 188, 0.5);
+  background-image: initial;
+  background-repeat: no-repeat;
+  background-position: center;
   filter: blur(400px);
   z-index: -1;
+  cursor: initial;
+  overflow: hidden;
 }
 @media screen and (max-width: 320px) {
   .draw__title::before {
@@ -660,10 +679,16 @@
     position: absolute;
     top: -123px;
     left: -80px;
+    right: initial;
     border-radius: 50%;
     background-color: rgba(113, 37, 188, 0.5);
+    background-image: initial;
+    background-repeat: no-repeat;
+    background-position: center;
     filter: blur(200px);
     z-index: -1;
+    cursor: initial;
+    overflow: hidden;
   }
 }
 .draw__container {
@@ -679,10 +704,16 @@
   position: absolute;
   top: 0;
   left: 80%;
+  right: initial;
   border-radius: 50%;
   background-color: rgba(0, 197, 114, 0.4);
+  background-image: initial;
+  background-repeat: no-repeat;
+  background-position: center;
   filter: blur(400px);
   z-index: -1;
+  cursor: initial;
+  overflow: hidden;
 }
 @media screen and (max-width: 1024px) {
   .draw__container::before {
@@ -693,10 +724,16 @@
     position: absolute;
     top: 0;
     left: 80%;
+    right: initial;
     border-radius: 50%;
     background-color: rgba(0, 197, 114, 0.4);
+    background-image: initial;
+    background-repeat: no-repeat;
+    background-position: center;
     filter: blur(400px);
     z-index: -1;
+    cursor: initial;
+    overflow: hidden;
   }
 }
 @media screen and (max-width: 1024px) {
@@ -708,10 +745,16 @@
     position: absolute;
     top: 0;
     left: 80%;
+    right: initial;
     border-radius: 50%;
     background-color: rgba(0, 197, 114, 0.4);
+    background-image: initial;
+    background-repeat: no-repeat;
+    background-position: center;
     filter: blur(400px);
     z-index: -1;
+    cursor: initial;
+    overflow: hidden;
   }
 }
 @media screen and (max-width: 679px) {
@@ -723,10 +766,16 @@
     position: absolute;
     top: 90%;
     left: 70%;
+    right: initial;
     border-radius: 50%;
     background-color: rgba(0, 197, 114, 0.4);
+    background-image: initial;
+    background-repeat: no-repeat;
+    background-position: center;
     filter: blur(400px);
     z-index: -1;
+    cursor: initial;
+    overflow: hidden;
   }
 }
 @media screen and (max-width: 480px) {
@@ -738,10 +787,16 @@
     position: absolute;
     top: 54%;
     left: 70%;
+    right: initial;
     border-radius: 50%;
     background-color: rgba(0, 197, 114, 0.4);
+    background-image: initial;
+    background-repeat: no-repeat;
+    background-position: center;
     filter: blur(350px);
     z-index: -1;
+    cursor: initial;
+    overflow: hidden;
   }
 }
 @media screen and (max-width: 679px) {

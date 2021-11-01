@@ -11,14 +11,11 @@ let prizeTitle = document.querySelector('.prize__title')
 let prizeBlock2 = document.querySelector('.prize__block2')
 
 let slideIndex = 1
-// let overlapA  // variable for new Overlap
-// let overlapB  // variable for new Overlap
-// let isOverlap = false
 const prizeGapWidth = 1024; // used the value from media queries in _prize.scss file
-let prizeGapA
-// let prizeGapB 
-function prizeCheckGapAY(obj) {
-  // prizeCheckGapAY = obj.checkGap('y');
+let prizeGapA // Gap constructor function object
+let prizeGapB // Gap constructor function object
+
+function prizeCheckGapSmallY(obj) {
   let gapType;
   try {
     gapType = obj.checkGap('y').type;
@@ -27,9 +24,8 @@ function prizeCheckGapAY(obj) {
   catch(e){
     console.log(e);
   }
-  // prizeCheckGapAY = prizeCheckGapAY.type === SMALL || prizeCheckGapAY.type === INTERSECTION;
 }
-// console.log('prizeCheckGapAY', prizeCheckGapAY); 
+// console.log('prizeCheckGapSmallY', prizeCheckGapSmallY); 
 //  = getComputedStyle(document.documentElement).getPropertyValue('--prize-gap-width');
 // set the same height for all slides
 // console.log('prizeGapWidth = ', prizeGapWidth);
@@ -62,19 +58,6 @@ function addClass(obj, name) {
   }
 }
 
- 
-// = new prizeGap(prizeDescribe, prizeSlideDescrips[slideIndex - 1], 70, 50);
-// const prizeBetweenB = new prizeGap(prizeDescribe, prizeSlideDescrips[1], 40, 50);
-// console.log(prizeSlideDescrips[0].offsetWidth);
-// console.log(prizeSlideDescrips[1].offsetWidth);
-// console.log("prizeBetweenB.checkGap('x')", prizeBetweenB.checkGap('x'))
-// console.log(prizeGapA.checkGapX())
-// if(window.innerWidth > prizeGapWidth) {
-//   prizeGapA.setGapBothX(prizeGapA.checkGap('x'))
-//   // prizeBetweenB.setGapBothX(prizeBetweenB.checkGap('x'))
-// }
-// prizeGapA.setGapOneX(prizeGapA.checkGap('x'), prizeSlideDescrips[slideIndex - 1]);
-// console.log(prizeGapA.checkGapY())
 function showSlides (n) {
   // spin slides in a circle
   if(n > prizeSlides.length) slideIndex = 1
@@ -88,39 +71,34 @@ function showSlides (n) {
 
   prizeSlides[slideIndex - 1].style.display = 'block'
   prizeDot[slideIndex - 1].classList.add('prize__dot_active')
-  prizeGapA = new prizeGap(prizeDescribe, prizeSlideDescrips[slideIndex - 1], 70, 30);
-  // prizeCheckGapAY = prizeGapA.checkGap('d').type;
-  // console.log('prizeCheckGapAY', prizeCheckGapAY); 
-  // prizeCheckGapAY = prizeCheckGapAY.type === SMALL || prizeCheckGapAY.type === INTERSECTION;
-  // console.log('prizeCheckGapAY', prizeCheckGapAY);
-  if(window.innerWidth > prizeGapWidth && prizeCheckGapAY(prizeGapA)) {
+  prizeGapA = new prizeGap(prizeDescribe, prizeSlideDescrips[slideIndex - 1], 140, 30);
+  prizeGapB = new prizeGap(prizeTitle, prizeSlideDescrips[slideIndex - 1], 20, 30);
+
+  if(window.innerWidth > prizeGapWidth && prizeCheckGapSmallY(prizeGapA)) {
     prizeGapA.setGapBothX(prizeGapA.checkGap('x'))
-    // prizeBetweenB.setGapBothX(prizeBetweenB.checkGap('x'))
   }
+  if(window.innerWidth > prizeGapWidth && prizeCheckGapSmallY(prizeGapB)) {
+    prizeGapB.setGapBothX(prizeGapB.checkGap('x'))
+  }
+
 }
 showSlides(slideIndex);
-// console.log('prizeCheckGapAY', prizeCheckGapAY); 
 
-// we eliminate the intersection and adjust the indentation with 
-// the current slide when resizing the browser window
-// function resize(ab = prizeGapA.checkGapX, b = prizeGapA.checkGapX()) {
-//   prizeGapA.setGapBothX(b);
-//   console.log('b', b)
-// }
-// resize() resize
-window.addEventListener('resize', 
-()=> 
-{
-  // prizeGapA.setGapBothX(prizeGapA.checkGapX())
-  // prizeGapA.setGapBothX(prizeGapA.checkGap('x'))
-  
-  if(window.innerWidth > prizeGapWidth && prizeCheckGapAY(prizeGapA)) {
-    prizeGapA.setGapBothX(prizeGapA.checkGap('x'))
-    // prizeBetweenB.setGapBothX(prizeBetweenB.checkGap('x'))
+window.addEventListener('resize', ()=> {
+  // reset gap
+  if(window.innerWidth > prizeGapWidth ) {
+    prizeGapA.resetGap(prizeGapA.objA, prizeGapA.objB);
+    prizeGapB.resetGap(prizeGapB.objA, prizeGapB.objB);
   }
-    // prizeBlock2.style.height = getMaxHeight(prizeSlides) + 'px'
-}
-)
+  // set gap
+  if(window.innerWidth > prizeGapWidth && prizeCheckGapSmallY(prizeGapA)) {
+    prizeGapA.setGapBothX(prizeGapA.checkGap('x'))
+  }
+  if(window.innerWidth > prizeGapWidth && prizeCheckGapSmallY(prizeGapB)) {
+    prizeGapB.setGapBothX(prizeGapB.checkGap('x'))
+  }
+
+})
 
 // click on slider conteiner
 prizeSlider.addEventListener('click', (e)=> {
