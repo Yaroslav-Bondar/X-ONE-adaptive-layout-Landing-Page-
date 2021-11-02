@@ -935,9 +935,6 @@
 .present__block1, .present__block2 {
   width: 50%;
 }
-.present__block2 {
-  position: relative;
-}
 .present__block1 {
   display: flex;
   flex-flow: column;
@@ -959,6 +956,7 @@
   text-transform: none;
   line-height: 125%;
   color: rgba(228, 228, 228, 0.5);
+  word-wrap: anywhere;
 }
 .present__input[type=number]::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -973,9 +971,14 @@
   margin-left: auto;
 }
 .present__present-descr {
-  position: absolute;
-  bottom: 90px;
-  right: 0;
+  position: relative;
+  bottom: 152px;
+  float: right;
+}
+@media screen and (max-width: 1024px) {
+  .present__present-descr {
+    bottom: 0;
+  }
 }
 
 .footer {

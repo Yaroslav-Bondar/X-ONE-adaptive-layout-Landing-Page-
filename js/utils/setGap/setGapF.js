@@ -42,20 +42,20 @@ Gap.prototype.checkGap = function(axis) {
     if(gapDifference >= 0) {
         console.log('gapDifference >= 0');
         if(gapDifference < gap) {
-            // console.log('checkGap', SMALL);
+            console.log('checkGap', SMALL);
             return { type: SMALL, value: gapDifference, axis: axis };
         }
         if(gapDifference > gap) {
-            // console.log('checkGap', BIG);
+            console.log('checkGap', BIG);
             return { type: BIG, value: gapDifference , axis: axis};
         }
         if(gapDifference == 0) {
-            // console.log('checkGap', ZERO);
+            console.log('checkGap', ZERO);
             return { type: ZERO, value: gapDifference , axis: axis};
         }
     }
     if(gapDifference < 0 ) {
-        // console.log('checkGap', INTERSECTION);
+        console.log('checkGap', INTERSECTION);
         return { type: INTERSECTION, value: gapDifference , axis: axis};
     }
     return false;

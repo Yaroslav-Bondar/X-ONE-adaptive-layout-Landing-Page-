@@ -7,7 +7,7 @@
         width: 50%;
     }
     &__block2 {
-        position: relative;
+        // position: relative;
     }
     &__block1 {
         display: flex;
@@ -25,6 +25,7 @@
             left: 105%;
             transform: translateY(-50%);
             @include font(400, 15px, 125%, $gray-to-rgba, $family: 'Roboto Regular');
+            word-wrap: anywhere;
         }
     }
     &__input {
@@ -46,10 +47,14 @@
 
         }
         &-descr {
-            position: absolute;
-            bottom: 90px;
-            right: 0;
-            // float: left;
+            // position: absolute;
+            position: relative;
+            bottom: 152px;
+            float: right;
+            @media  screen and(max-width: $brkpoint-1) {
+                bottom: 0;
+            }
+            // right: 0;
         }
     }
 }
