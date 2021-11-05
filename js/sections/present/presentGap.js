@@ -1,57 +1,53 @@
-let presentPresentDescr = document.querySelector('.present__present-descr');
+// let presentPresentDescr = document.querySelector('.present__present-descr');
 let presentFormtDescr = document.querySelector('.present__form-descr');
 let presentFormtBtn = document.querySelector('.present__form-btn');
+let presentConteiner = document.querySelector('.present__conteiner');
+let presentPresentDescrs = document.getElementsByClassName('present__present-descr');
+let presentGapA = new Gap(presentFormtDescr, presentPresentDescrs[0], 30, 20);
+let presentGapB = new Gap(presentFormtBtn, presentPresentDescrs[0], 90, 20);
+// let presentPresentDescrClone;
+const presentBlock2 = document.querySelector('.present__block2');
+// const presentTrackPoint1 = 1024; 
 
-
-let presentGapA = new Gap(presentFormtDescr, presentPresentDescr, 30, 20);
-let presentGapB = new Gap(presentFormtBtn, presentPresentDescr, 90, 20);
-const presentTrackPoint1 = 1024; 
-
-function presentCheckGapSmallY(obj) {
-    let gapType;
-    try {
-      gapType = obj.checkGap('y').type;
-    //   || gapType === INTERSECTION
-      return gapType === SMALL || gapType === INTERSECTION ? true : false;
+function presentGapPack() {
+  try {
+    // presentGapA.resetGap(presentFormtDescr, presentPresentDescrs[0]);
+    // presentGapB.resetGap(presentPresentDescrs[0]);
+    // console.log('presentCheckGapSmallY(presentGapA)', presentCheckGapSmallY(presentGapA));
+    if(window.innerWidth <= 1024) {
+      presentConteiner.append(presentPresentDescrs[0]);
     }
-    catch(e){
-      console.log(e);
-    }
-}
-// >= presentTrackPoint1
-// if(window.innerWidth) {
-  if(presentCheckGapSmallY(presentGapA)) {
+    else if(window.innerWidth >= 1024) {
+      presentBlock2.append(presentPresentDescrs[0]);
+    } 
+    if(presentGapA.checkGap('y').type === SMALL || presentGapA.checkGap('y').type === INTERSECTION) {
+      // console.log('A');  
       presentGapA.setGapBothX(presentGapA.checkGap('x'));
-      // if(window.innerWidth <= 1200) {
-      if(+presentFormtDescr.style.width.match(/\d+/g)[0] < 90) {
-      // if(presentFormtDescr.style.width <= 1200) {
-        presentFormtDescr.style.width = 90 + 'px';
-        presentGapA.setGapOneX(presentGapA.checkGap('x'), presentPresentDescr);
+        // console.log('CCCC');
+      if(+presentFormtDescr.style.width.match(/\d+/)[0] < 90) {
+        // console.log('+presentFormtDescr.style.width', presentFormtDescr.style.width.match(/\d+/g)[0]);
+        // if(presentFormtDescr.style.width <= 1200) {
+        presentFormtDescr.style.width = '90px';
+        presentGapA.setGapOneX(presentGapA.checkGap('x'), presentPresentDescrs[0]);
       }
+      // if(+presentPresentDescrs[0].style.width.match(/\d+/)[0] < 370) {
+      //   presentPresentDescrs[0].style.width = '370px';
+      // }
+    }
+    else if(window.innerWidth > 1024 && (presentGapB.checkGap('x').type === SMALL || presentGapB.checkGap('x').type === INTERSECTION)) {
+      presentGapB.setGapOneX(presentGapB.checkGap('x'), presentPresentDescrs[0]);
+      // console.log('B');  
+    }
   }
-  else if(presentGapB.checkGap('x').type === SMALL || presentGapB.checkGap('x').type === INTERSECTION) {
-      presentGapB.setGapOneX(presentGapB.checkGap('x'), presentPresentDescr);
+  catch(err) {
+    console.log(err);
   }
-// }
+}
+
+presentGapPack();
 
 window.addEventListener('resize', ()=> {
-  // if(window.innerWidth > presentTrackPoint1) {
-  // }
-  // > presentTrackPoint1
-  // if(window.innerWidth ) {
-    presentGapA.resetGap(presentFormtDescr, presentPresentDescr);
-    presentGapB.resetGap(presentPresentDescr);
-    if(presentCheckGapSmallY(presentGapA)) {
-        presentGapA.setGapBothX(presentGapA.checkGap('x'));
-        if(+presentFormtDescr.style.width.match(/\d+/g)[0] < 90) {
-          console.log('+presentFormtDescr.style.width', presentFormtDescr.style.width.match(/\d+/g)[0]);
-          // if(presentFormtDescr.style.width <= 1200) {
-          presentFormtDescr.style.width = 90 + 'px';
-          presentGapA.setGapOneX(presentGapA.checkGap('x'), presentPresentDescr);
-        }
-    }
-    else if(presentGapB.checkGap('x').type === SMALL || presentGapB.checkGap('x').type === INTERSECTION) {
-        presentGapB.setGapOneX(presentGapB.checkGap('x'), presentPresentDescr);
-    }
-  // }
+  presentGapA.resetGap(presentFormtDescr, presentPresentDescrs[0]);
+  presentGapB.resetGap(presentPresentDescrs[0]);
+  presentGapPack();
 });

@@ -16,20 +16,21 @@
         align-items: center;
         &::before {
             @include decor(522px, 522px, 0, 80%, $decor-color-9, $decor-blur-xl);
+            display: none;
             @media screen and(max-width: $brkpoint-1) {
                 @include decor(385px, 385px, 0, 80%, $decor-color-9, $decor-blur-xl);
             }
             @media screen and(max-width: $brkpoint-1) {
                 @include decor(385px, 385px, 0, 80%, $decor-color-9, $decor-blur-xl);
             }
-            @media screen and(max-width: $draw-brkpoint-2) {
+            @media screen and(max-width: $draw-brkpoint-3) {
                 @include decor(385px, 385px, 90%, 70%, $decor-color-9, $decor-blur-xl);
             }
             @media screen and(max-width: $brkpoint-3) {
                 @include decor(236px, 236px, 54%, 70%, $decor-color-9, $decor-blur-l);
             }
         }
-        @media screen and(max-width: $draw-brkpoint-2) {
+        @media screen and(max-width: $draw-brkpoint-3) {
             flex-flow: column;
             align-items: normal;
         }
@@ -44,7 +45,7 @@
             margin-right: 40px;
             padding-left: 60px;
         }
-        @media screen and(max-width: $draw-brkpoint-2) {
+        @media screen and(max-width: $draw-brkpoint-3) {
             margin: 0 0 50px 0;
         }
         &::before {
@@ -119,21 +120,19 @@
         }
     }
     &__form {
-        @media screen and(max-width: $brkpoint-1) {
-            width: 300px;
-        }
-        @media screen and(max-width: $draw-brkpoint-2) {
-            width: 100%;
-        }
-        &-btn {
-            @media screen and(max-width: $brkpoint-1) {
+        & :nth-child(n) {
+            @media screen and(max-width: $draw-brkpoint-2) {
                 height: 65px;
             }
         }
-    }
-    &__input {
         @media screen and(max-width: $brkpoint-1) {
-            height: 65px;
+            width: 360px;
+        }
+        @media screen and(max-width: $draw-brkpoint-2) {
+            width: 300px;
+        }
+        @media screen and(max-width: $draw-brkpoint-3) {
+            width: 100%;
         }
     }
 }

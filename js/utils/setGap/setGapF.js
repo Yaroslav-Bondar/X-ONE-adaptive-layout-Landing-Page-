@@ -43,19 +43,23 @@ Gap.prototype.checkGap = function(axis) {
         console.log('gapDifference >= 0');
         if(gapDifference < gap) {
             console.log('checkGap', SMALL);
+            console.log('checkGap: axis', axis);
             return { type: SMALL, value: gapDifference, axis: axis };
         }
         if(gapDifference > gap) {
             console.log('checkGap', BIG);
+            console.log('checkGap: axis', axis);
             return { type: BIG, value: gapDifference , axis: axis};
         }
         if(gapDifference == 0) {
             console.log('checkGap', ZERO);
+            console.log('checkGap: axis', axis);
             return { type: ZERO, value: gapDifference , axis: axis};
         }
     }
     if(gapDifference < 0 ) {
         console.log('checkGap', INTERSECTION);
+        console.log('checkGap: axis', axis);
         return { type: INTERSECTION, value: gapDifference , axis: axis};
     }
     return false;
@@ -70,36 +74,36 @@ Gap.prototype.setGapBothX = function(gapX) {
     }
     // console.log('setGapBothX - gapX', gapX);
     if(gapX.type === INTERSECTION) {
-        console.log(gapX.type);
-        console.log(Gap.prototype.getCoords(this.objB).coords.left - Gap.prototype.getCoords(this.objA).coords.right);
+        // console.log(gapX.type);
+        // console.log(Gap.prototype.getCoords(this.objB).coords.left - Gap.prototype.getCoords(this.objA).coords.right);
         let difference = Math.abs(gapX.value)/2 + this.gapX/2;
-        console.log('difference', difference);
+        // console.log('difference', difference);
         this.objA.style.width = this.objA.offsetWidth - difference + 'px';
         this.objB.style.width = this.objB.offsetWidth - difference + 'px';
-        console.log(Gap.prototype.getCoords(this.objB).coords.left - Gap.prototype.getCoords(this.objA).coords.right);
+        // console.log(Gap.prototype.getCoords(this.objB).coords.left - Gap.prototype.getCoords(this.objA).coords.right);
     }
     if(gapX.type === SMALL) {
-        console.log(gapX.type);
-        console.log(Gap.prototype.getCoords(this.objB).coords.left - Gap.prototype.getCoords(this.objA).coords.right);
+        // console.log(gapX.type);
+        // console.log(Gap.prototype.getCoords(this.objB).coords.left - Gap.prototype.getCoords(this.objA).coords.right);
         let difference = (this.gapX - gapX.value) / 2; 
         this.objA.style.width = this.objA.offsetWidth - difference + 'px';
         this.objB.style.width = this.objB.offsetWidth - difference + 'px';
-        console.log(Gap.prototype.getCoords(this.objB).coords.left - Gap.prototype.getCoords(this.objA).coords.right);
+        // console.log(Gap.prototype.getCoords(this.objB).coords.left - Gap.prototype.getCoords(this.objA).coords.right);
     }
     if(gapX.type === BIG) {
-        console.log(gapX.type);
-        console.log(Gap.prototype.getCoords(this.objB).coords.left - Gap.prototype.getCoords(this.objA).coords.right);
+        // console.log(gapX.type);
+        // console.log(Gap.prototype.getCoords(this.objB).coords.left - Gap.prototype.getCoords(this.objA).coords.right);
         let difference = (gapX.value - this.gapX) / 2;
         this.objA.style.width = this.objA.offsetWidth + difference + 'px';
         this.objB.style.width = this.objB.offsetWidth + difference + 'px';
-        console.log(Gap.prototype.getCoords(this.objB).coords.left - Gap.prototype.getCoords(this.objA).coords.right);
+        // console.log(Gap.prototype.getCoords(this.objB).coords.left - Gap.prototype.getCoords(this.objA).coords.right);
     }
     if(gapX.type === ZERO) {
-        console.log(gapX.type);
-        console.log(Gap.prototype.getCoords(this.objB).coords.left - Gap.prototype.getCoords(this.objA).coords.right);
+        // console.log(gapX.type);
+        // console.log(Gap.prototype.getCoords(this.objB).coords.left - Gap.prototype.getCoords(this.objA).coords.right);
         this.objA.style.width = this.objA.offsetWidth - this.gapX / 2 + 'px';
         this.objB.style.width = this.objB.offsetWidth - this.gapX / 2 + 'px';
-        console.log(Gap.prototype.getCoords(this.objB).coords.left - Gap.prototype.getCoords(this.objA).coords.right);
+        // console.log(Gap.prototype.getCoords(this.objB).coords.left - Gap.prototype.getCoords(this.objA).coords.right);
     }
 }
 Gap.prototype.setGapOneX = function(gapX, obj) {
@@ -109,31 +113,31 @@ Gap.prototype.setGapOneX = function(gapX, obj) {
         return;
     }
     if(gapX.type === INTERSECTION) {
-        console.log('setGapOneX = ', gapX.type);
-        console.log('setGapOneX = ', gapX.value);
+        // console.log('setGapOneX = ', gapX.type);
+        // console.log('setGapOneX = ', gapX.value);
         let difference = Math.abs(gapX.value) + this.gapX;
         obj.style.width = obj.offsetWidth - difference + 'px';
-        console.log('setGapOneX = ', Gap.prototype.getCoords(this.objB).coords.left - Gap.prototype.getCoords(this.objA).coords.right);
+        // console.log('setGapOneX = ', Gap.prototype.getCoords(this.objB).coords.left - Gap.prototype.getCoords(this.objA).coords.right);
     }
     if(gapX.type === SMALL) {
-        console.log('setGapOneX = ', gapX.type);
-        console.log('setGapOneX = ', gapX.value);
+        // console.log('setGapOneX = ', gapX.type);
+        // console.log('setGapOneX = ', gapX.value);
         let difference = this.gapX - gapX.value;
         obj.style.width = obj.offsetWidth - difference + 'px';
-        console.log('setGapOneX = ', Gap.prototype.getCoords(this.objB).coords.left - Gap.prototype.getCoords(this.objA).coords.right);
+        // console.log('setGapOneX = ', Gap.prototype.getCoords(this.objB).coords.left - Gap.prototype.getCoords(this.objA).coords.right);
     }
     if(gapX.type === BIG) {
-        console.log('setGapOneX = ', gapX.type);
-        console.log('setGapOneX = ', gapX.value);
+        // console.log('setGapOneX = ', gapX.type);
+        // console.log('setGapOneX = ', gapX.value);
         let difference = gapX.value - this.gapX;
         obj.style.width = obj.offsetWidth + difference + 'px';
-        console.log('setGapOneX = ', Gap.prototype.getCoords(this.objB).coords.left - Gap.prototype.getCoords(this.objA).coords.right);
+        // console.log('setGapOneX = ', Gap.prototype.getCoords(this.objB).coords.left - Gap.prototype.getCoords(this.objA).coords.right);
     }
     if(gapX.type === ZERO) {
-        console.log('setGapOneX = ', gapX.type);
-        console.log('setGapOneX = ', gapX.value);
+        // console.log('setGapOneX = ', gapX.type);
+        // console.log('setGapOneX = ', gapX.value);
         obj.style.width = obj.offsetWidth - this.gapX + 'px';
-        console.log('setGapOneX = ', Gap.prototype.getCoords(this.objB).coords.left - Gap.prototype.getCoords(this.objA).coords.right);
+        // console.log('setGapOneX = ', Gap.prototype.getCoords(this.objB).coords.left - Gap.prototype.getCoords(this.objA).coords.right);
     }
 } 
 

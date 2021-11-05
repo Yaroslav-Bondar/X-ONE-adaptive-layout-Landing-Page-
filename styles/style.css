@@ -46,6 +46,12 @@
   width: 80px;
   border: 5px solid #FAAF18;
 }
+@media screen and (max-width: 1024px) {
+  .line {
+    width: 70px;
+    border: 4px solid #FAAF18;
+  }
+}
 @media screen and (max-width: 768px) {
   .line {
     width: 50px;
@@ -65,6 +71,12 @@
   border-radius: 25px;
   border: none;
   cursor: pointer;
+}
+@media screen and (max-width: 480px) {
+  .btn {
+    font-size: 15px;
+    letter-spacing: 1px;
+  }
 }
 
 .description {
@@ -127,6 +139,16 @@
   text-transform: none;
   line-height: 120%;
   color: #FFFFFF;
+}
+@media screen and (max-width: 1024px) {
+  .title {
+    font-size: 40px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .title {
+    font-size: 33px;
+  }
 }
 
 .form {
@@ -277,7 +299,7 @@
   background-image: url("../img/modal/close.svg");
   background-repeat: no-repeat;
   background-position: center;
-  filter: blur(0);
+  filter: initial;
   z-index: initial;
   cursor: pointer;
   overflow: hidden;
@@ -464,7 +486,7 @@
   cursor: pointer;
 }
 .prize__slider .prize__slide .prize__slide-img-wrap::before, .prize__slider .prize__slide .prize__slide-img-wrap::after {
-  display: block;
+  display: none;
   content: "";
   position: absolute;
   width: 581px;
@@ -665,8 +687,8 @@
   background-image: initial;
   background-repeat: no-repeat;
   background-position: center;
-  filter: blur(400px);
-  z-index: -1;
+  filter: 400px;
+  z-index: initial;
   cursor: initial;
   overflow: hidden;
 }
@@ -685,8 +707,8 @@
     background-image: initial;
     background-repeat: no-repeat;
     background-position: center;
-    filter: blur(200px);
-    z-index: -1;
+    filter: 200px;
+    z-index: initial;
     cursor: initial;
     overflow: hidden;
   }
@@ -710,10 +732,11 @@
   background-image: initial;
   background-repeat: no-repeat;
   background-position: center;
-  filter: blur(400px);
-  z-index: -1;
+  filter: 400px;
+  z-index: initial;
   cursor: initial;
   overflow: hidden;
+  display: none;
 }
 @media screen and (max-width: 1024px) {
   .draw__container::before {
@@ -730,8 +753,8 @@
     background-image: initial;
     background-repeat: no-repeat;
     background-position: center;
-    filter: blur(400px);
-    z-index: -1;
+    filter: 400px;
+    z-index: initial;
     cursor: initial;
     overflow: hidden;
   }
@@ -751,13 +774,13 @@
     background-image: initial;
     background-repeat: no-repeat;
     background-position: center;
-    filter: blur(400px);
-    z-index: -1;
+    filter: 400px;
+    z-index: initial;
     cursor: initial;
     overflow: hidden;
   }
 }
-@media screen and (max-width: 679px) {
+@media screen and (max-width: 700px) {
   .draw__container::before {
     content: "";
     display: block;
@@ -772,8 +795,8 @@
     background-image: initial;
     background-repeat: no-repeat;
     background-position: center;
-    filter: blur(400px);
-    z-index: -1;
+    filter: 400px;
+    z-index: initial;
     cursor: initial;
     overflow: hidden;
   }
@@ -793,13 +816,13 @@
     background-image: initial;
     background-repeat: no-repeat;
     background-position: center;
-    filter: blur(350px);
-    z-index: -1;
+    filter: 350px;
+    z-index: initial;
     cursor: initial;
     overflow: hidden;
   }
 }
-@media screen and (max-width: 679px) {
+@media screen and (max-width: 700px) {
   .draw__container {
     flex-flow: column;
     align-items: normal;
@@ -818,7 +841,7 @@
     padding-left: 60px;
   }
 }
-@media screen and (max-width: 679px) {
+@media screen and (max-width: 700px) {
   .draw__slider {
     margin: 0 0 50px 0;
   }
@@ -908,44 +931,82 @@
     width: 100%;
   }
 }
+@media screen and (max-width: 870px) {
+  .draw__form :nth-child(n) {
+    height: 65px;
+  }
+}
 @media screen and (max-width: 1024px) {
+  .draw__form {
+    width: 360px;
+  }
+}
+@media screen and (max-width: 870px) {
   .draw__form {
     width: 300px;
   }
 }
-@media screen and (max-width: 679px) {
+@media screen and (max-width: 700px) {
   .draw__form {
     width: 100%;
   }
 }
-@media screen and (max-width: 1024px) {
-  .draw__form-btn {
-    height: 65px;
-  }
-}
-@media screen and (max-width: 1024px) {
-  .draw__input {
-    height: 65px;
-  }
-}
 
-.present__conteiner {
-  display: flex;
+.present {
+  padding: 50px 0 0 0;
 }
-.present__block1, .present__block2 {
-  width: 50%;
+@media screen and (max-width: 1024px) {
+  .present {
+    padding: 50px 0 70px 0;
+  }
+}
+.present__conteiner {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+@media screen and (max-width: 700px) {
+  .present__conteiner {
+    grid-template-columns: 100%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .present__block2 {
+    grid-area: 2/1/3/2;
+  }
 }
 .present__block1 {
   display: flex;
   flex-flow: column;
   justify-content: center;
 }
+@media screen and (max-width: 870px) {
+  .present__form :nth-child(n) {
+    height: 65px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .present__form {
+    width: 360px;
+  }
+}
+@media screen and (max-width: 870px) {
+  .present__form {
+    width: 300px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .present__form {
+    width: 100%;
+  }
+}
 .present__form-wrap {
   position: relative;
+  height: auto !important;
 }
 .present__form-descr {
   position: absolute;
   width: 310px;
+  height: auto !important;
   top: 50%;
   left: 105%;
   transform: translateY(-50%);
@@ -957,6 +1018,19 @@
   line-height: 125%;
   color: rgba(228, 228, 228, 0.5);
   word-wrap: anywhere;
+}
+@media screen and (max-width: 870px) {
+  .present__form-descr {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .present__form-descr {
+    position: static;
+    width: 200px;
+    margin: 0 0 5px auto !important;
+    font-size: 10px;
+  }
 }
 .present__input[type=number]::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -970,6 +1044,17 @@
   height: 648px;
   margin-left: auto;
 }
+@media screen and (max-width: 870px) {
+  .present__present {
+    width: 278px;
+    height: 548px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .present__present {
+    margin: 0 auto;
+  }
+}
 .present__present-descr {
   position: relative;
   bottom: 152px;
@@ -977,7 +1062,26 @@
 }
 @media screen and (max-width: 1024px) {
   .present__present-descr {
-    bottom: 0;
+    position: static;
+    width: 150%;
+    float: none;
+    grid-area: 2/2/3/3;
+    justify-self: end;
+  }
+}
+@media screen and (max-width: 700px) {
+  .present__present-descr {
+    grid-area: 3/1/4/2;
+    width: 80%;
+    padding: 30px 50px;
+    justify-self: center;
+  }
+}
+@media screen and (max-width: 480px) {
+  .present__present-descr {
+    width: 100%;
+    padding: 20px 35px;
+    font-size: 14px;
   }
 }
 

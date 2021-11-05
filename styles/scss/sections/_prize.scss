@@ -31,7 +31,8 @@
         }
     }
     &__title::before {
-        @include decor(248px, 248px, -111px, -68px, $decor-color-7, $decor-blur-l);
+        @include decor(248px, 248px, -111px, -68px, $decor-color-7, $filter: blur($decor-blur-l),
+                        $z-index: -1);
     }
     &__describe {
         margin-top: 34px;
@@ -64,7 +65,8 @@
         cursor: pointer;
         & .prize__slide .prize__slide-img-wrap::before,
         & .prize__slide .prize__slide-img-wrap::after {
-            display: block;
+            display: none;
+            // display: block;
             content: '';
             position: absolute;
             width: 581px;
