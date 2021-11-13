@@ -173,7 +173,7 @@
     }
 }
 .modal {
-    display: none;
+    // display: none;
     position: absolute;
     top: 0;
     left: 0;
@@ -196,17 +196,9 @@
         padding: 70px 110px;
         width: 710px;
     }
-    &-info {
-        &__title {
-            margin-bottom: 25px;
-        }
-        &__message {
-            @include font(normal, 17px, 150%, $white, $family: 'Roboto Regular');
-            & > p:first-child {
-                margin-top: 20px;
-            }
-        }
-    }
+}
+.mark {
+    @include font(400, 15px, 125%, $gray-to-rgba, $family: 'Roboto Regular');
 } 
 @keyframes fade {
     0%   {opacity: 0.5;}

@@ -8,7 +8,8 @@
 @import 'sections/draw';
 @import 'sections/present';
 @import 'sections/footer';
-
+@import 'modals/thanks-modal';
+@import 'modals/person-modal';
 body {
     font-family: "Roboto Bold";
     background-color: $main-background-color;    

@@ -46,7 +46,7 @@
             position: relative;
             height: auto !important;
         }
-        &-descr {
+        &-mark {
             position: absolute;
             width: 310px;
             height: auto !important;
@@ -54,7 +54,6 @@
             left: 105%;
             // margin-bottom: 0;
             transform: translateY(-50%);
-            @include font(400, 15px, 125%, $gray-to-rgba, $family: 'Roboto Regular');
             word-wrap: anywhere;
             @media screen and(max-width: $present-brkpoint-1) {
                 font-size: 12px;

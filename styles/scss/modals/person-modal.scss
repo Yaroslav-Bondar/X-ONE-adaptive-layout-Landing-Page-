@@ -1,0 +1,12 @@
+.person-modal {
+    // display: none;
+    &__container {
+        width: 860px;
+        padding: 70px 110px;
+    }
+    &__title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

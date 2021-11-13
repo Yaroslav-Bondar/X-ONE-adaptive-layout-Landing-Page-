@@ -31,7 +31,8 @@ Gap.prototype.checkGap = function(axis) {
     }
     else if(axis === 'y') {
         gap = this.gapY;
-        gapDifference = Gap.prototype.getCoords(this.objB).coords.top - Gap.prototype.getCoords(this.objA).coords.bottom;
+        // + window.PageYOffset
+        gapDifference = (Gap.prototype.getCoords(this.objB).coords.top) - (Gap.prototype.getCoords(this.objA).coords.bottom);
     }
     else {
         console.log("checkGap: wrong function parameter !!! should be a string 'x' or 'y'");
@@ -49,6 +50,7 @@ Gap.prototype.checkGap = function(axis) {
         if(gapDifference > gap) {
             console.log('checkGap', BIG);
             console.log('checkGap: axis', axis);
+            console.log('checkGap', gapDifference);
             return { type: BIG, value: gapDifference , axis: axis};
         }
         if(gapDifference == 0) {
