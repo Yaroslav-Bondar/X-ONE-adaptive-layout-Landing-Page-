@@ -8,5 +8,37 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        margin-bottom: 40px;
+    }
+    &__form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 'city street'
+                             'house office'
+                             'name phone'
+                             'btn btn';
+        gap: 20px;
+    }
+    
+    &__input:nth-child(1) {
+        grid-area: city;
+    }
+    &__input:nth-child(2) {
+        grid-area: house;
+    }
+    &__input:nth-child(3) {
+        grid-area: name;
+    }
+    &__input:nth-child(4) {
+        grid-area: street;
+    }
+    &__input:nth-child(5) {
+        grid-area: office;
+    }
+    &__input:nth-child(6) {
+        grid-area: phone;
+    }
+    &__btn {
+        grid-area: btn;
     }
 }

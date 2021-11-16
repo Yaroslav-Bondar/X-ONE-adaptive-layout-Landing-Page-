@@ -1188,6 +1188,34 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 40px;
+}
+.person-modal__form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "city street" "house office" "name phone" "btn btn";
+  gap: 20px;
+}
+.person-modal__input:nth-child(1) {
+  grid-area: city;
+}
+.person-modal__input:nth-child(2) {
+  grid-area: house;
+}
+.person-modal__input:nth-child(3) {
+  grid-area: name;
+}
+.person-modal__input:nth-child(4) {
+  grid-area: street;
+}
+.person-modal__input:nth-child(5) {
+  grid-area: office;
+}
+.person-modal__input:nth-child(6) {
+  grid-area: phone;
+}
+.person-modal__btn {
+  grid-area: btn;
 }
 
 body {
