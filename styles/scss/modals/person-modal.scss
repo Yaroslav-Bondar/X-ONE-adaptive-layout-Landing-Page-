@@ -1,3 +1,10 @@
+.test::before {
+    display: block;
+    content: '*';
+    width: 60px;
+    height: 60px;
+    color: brown;
+}
 .person-modal {
     // display: none;
     &__container {
@@ -10,6 +17,16 @@
         align-items: center;
         margin-bottom: 40px;
     }
+    &__mark {
+        position: relative;
+    }
+    &__mark::before {
+        content: '*';
+        position: absolute;
+        top: -3px;
+        left: -10px;
+        color: $accent;
+    }
     &__form {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -19,24 +36,43 @@
                              'btn btn';
         gap: 20px;
     }
-    
-    &__input:nth-child(1) {
+    &__input-wrap {
+        position: relative;
+
+    }
+    &__input-wrap::before {
+        content: '*';
+        position: absolute;
+        top: calc((#{$person-input-height} - #{$person-input-font-size}) / 2 - 3px); 
+        text-indent: 50px;
+        color: $accent;
+    }
+    &__input-wrap:nth-child(1) {
         grid-area: city;
     }
-    &__input:nth-child(2) {
+    &__input-wrap:nth-child(2) {
         grid-area: house;
     }
-    &__input:nth-child(3) {
+    &__input-wrap:nth-child(3) {
         grid-area: name;
     }
-    &__input:nth-child(4) {
+    &__input-wrap:nth-child(4) {
         grid-area: street;
     }
-    &__input:nth-child(5) {
+    &__input-wrap:nth-child(5) {
         grid-area: office;
     }
-    &__input:nth-child(6) {
+    &__input-wrap:nth-child(6) {
         grid-area: phone;
+    }
+    &__input {
+        width: 100%;
+        height: $person-input-height;
+        font-size: $person-input-font-size;
+        text-indent: $person-input-text-indent;
+    }
+    &__input::placeholder {
+        font-size: 10px;     /// *
     }
     &__btn {
         grid-area: btn;
