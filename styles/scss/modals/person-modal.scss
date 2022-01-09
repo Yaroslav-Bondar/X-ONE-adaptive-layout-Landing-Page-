@@ -1,24 +1,41 @@
-.test::before {
-    display: block;
-    content: '*';
-    width: 60px;
-    height: 60px;
-    color: brown;
-}
 .person-modal {
     // display: none;
     &__container {
         width: 860px;
         padding: 70px 110px;
+        @media screen and(max-width: $person-modal-brkpoint-1) {
+            width: 80%;
+            padding: 65px;
+        }
+        @media screen and(max-width: $person-modal-brkpoint-3) {
+            padding: 35px;
+        }
+        &::before {
+            @media screen and(max-width: $person-modal-brkpoint-2) {
+                width: 50px;
+                height: 50px;
+                top: -27px;
+                right: -27px;
+            }
+        }
     }
     &__title {
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin-bottom: 40px;
+        @media screen and(max-width: $person-modal-brkpoint-1) {
+            font-size: 30px;
+        }
+        @media screen and(max-width: $person-modal-brkpoint-3) {
+            flex-flow: column;
+        }
     }
     &__mark {
         position: relative;
+        @media screen and(max-width: $person-modal-brkpoint-3) {
+            margin-top: 20px;
+        }
     }
     &__mark::before {
         content: '*';
@@ -35,17 +52,33 @@
                              'name phone'
                              'btn btn';
         gap: 20px;
+        @media screen and(max-width: $person-modal-brkpoint-3) {
+            grid-template-columns: 1fr;
+            grid-template-areas: 'city' 
+                                'street'
+                                'house'
+                                'office'
+                                'name' 
+                                'phone'
+                                'btn';
+        }
     }
     &__input-wrap {
         position: relative;
-
     }
     &__input-wrap::before {
         content: '*';
         position: absolute;
-        top: calc((#{$person-input-height} - #{$person-input-font-size}) / 2 - 3px); 
-        text-indent: 50px;
+        text-indent: calc(#{$person-input-text-indent} - 10px);
         color: $accent;
+        top: calc((#{$person-input-height} - #{$placeholder-input-font-size}) / 2 - 3px);
+        @media screen and(max-width: $person-modal-brkpoint-1) {
+            top: calc((#{$person-input-height-brkpoint1} - #{$placeholder-input-font-size}) / 2 - 3px); 
+        }
+    }
+    &__input-wrap:focus-within::before {
+        color: $input-placeholder-color;
+        transition: .2s color;
     }
     &__input-wrap:nth-child(1) {
         grid-area: city;
@@ -68,13 +101,17 @@
     &__input {
         width: 100%;
         height: $person-input-height;
-        font-size: $person-input-font-size;
+        font-size: 19px;
         text-indent: $person-input-text-indent;
-    }
-    &__input::placeholder {
-        font-size: 10px;     /// *
+        @media screen and(max-width: $person-modal-brkpoint-1) {
+            height: $person-input-height-brkpoint1;
+        }
     }
     &__btn {
         grid-area: btn;
+        @media screen and(max-width: $person-modal-brkpoint-2) {
+            height: 70px;
+            font-size: 21px;
+        }
     }
 }

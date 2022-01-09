@@ -34,6 +34,8 @@ $slide-not-active-color: #002138;
 
 // //colors
 
+$placeholder-input-font-size: 19px;
+
 // breakpoints - variables are used throughout the project,
 // it is not recommended to change them
 $brkpoint-1: 1024px;
@@ -57,12 +59,12 @@ $present-brkpoint-1: 870px;
 $present-brkpoint-2: 700px;
 // $present-brkpoint-2: 700px;
 
-// person-input
-$person-input-text-indent: 60px;
-$person-input-height: 45px;
-$person-input-font-size: 19px;
-// $brkpoint-3: 1024px;
-// $brkpoint-2: 768px;
-// $brkpoint-3: 480px;
-// $brkpoint-4: 320px;
+// person-modal
+$person-input-text-indent: 40px;
+$person-input-height: 85px;
+$person-input-height-brkpoint1: 70px;
+
+$person-modal-brkpoint-1: 1200px;
+$person-modal-brkpoint-2: 900px;
+$person-modal-brkpoint-3: 800px;
     

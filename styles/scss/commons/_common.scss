@@ -96,7 +96,7 @@
     &__input::placeholder,
     &__input::-webkit-input-placeholder,
     &__input::-moz-placeholder {
-        @include font(400, 19px, 125%, $input-placeholder-color, $family: 'Roboto Regular');
+        @include font(400, $placeholder-input-font-size, 125%, $input-placeholder-color, $family: 'Roboto Regular');
     }
     &__input:focus {
         border: 1px solid $accent;
@@ -186,7 +186,7 @@
         border-radius: 25px;
         background-color: $slide-not-active-color;
         &::before {
-            @include decor(60px, 60px, -30px, $bgcolor: $white, $bgimage: url('../img/modal/close.svg'),$cursor:pointer, $right: -30px);
+            @include decor(60px, 60px, -30px, $bgcolor: $white, $bgimage: url('../img/modal/close.svg'), $cursor:pointer, $right: -30px);
         }
     }
     &__title {
