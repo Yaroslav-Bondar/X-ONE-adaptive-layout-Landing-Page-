@@ -14,9 +14,10 @@
 
 // }
 
-@mixin decor($width, $height, $top: initial, $left: initial, $bgcolor: initial, $filter: initial, $content: '', $display: block,
+@mixin decor($width, $height, $top: initial, $left: initial, $bgcolor: initial, $filter: initial,
+             $content: '', $display: block,
              $pos: absolute, $radius: 50%, $z-index: initial, $bgimage: initial, $bgrepeat: no-repeat,
-             $bgposition: center, $cursor: initial, $right: initial) {
+             $bgposition: center, $bgsize: initial, $cursor: initial, $right: initial) {
     content: $content;
     display: $display;
     width: $width;
@@ -33,6 +34,7 @@
         image: $bgimage;
         repeat: $bgrepeat;
         position: $bgposition;
+        size: $bgsize; 
     };
     filter: $filter;
     // blur($blur);

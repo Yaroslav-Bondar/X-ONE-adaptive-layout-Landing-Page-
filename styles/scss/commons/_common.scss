@@ -89,8 +89,7 @@
         background-color: transparent;
         border-radius: 25px;
         border: 1px solid $input-border-color;
-        transition-property: border-color, box-shadow;
-        transition: .2s;
+        transition: border-color .2s, box-shadow .2s;
         @include font(400, 19px, 125%, $input-placeholder-color, $family: 'Roboto Regular');
     }
     &__input::placeholder,
@@ -186,7 +185,9 @@
         border-radius: 25px;
         background-color: $slide-not-active-color;
         &::before {
-            @include decor(60px, 60px, -30px, $bgcolor: $white, $bgimage: url('../img/modal/close.svg'), $cursor:pointer, $right: -30px);
+            @include decor(60px, 60px, -30px, $bgcolor: $white, 
+                $bgimage: url('../img/modal/close.svg'), $bgsize: 42%,
+                $cursor:pointer, $right: -30px);
         }
     }
     &__title {

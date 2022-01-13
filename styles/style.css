@@ -166,8 +166,7 @@
   background-color: transparent;
   border-radius: 25px;
   border: 1px solid #044654;
-  transition-property: border-color, box-shadow;
-  transition: 0.2s;
+  transition: border-color 0.2s, box-shadow 0.2s;
   font-weight: 400;
   font-style: normal;
   font-size: 19px;
@@ -298,6 +297,7 @@
   background-image: url("../img/modal/close.svg");
   background-repeat: no-repeat;
   background-position: center;
+  background-size: 42%;
   filter: initial;
   z-index: initial;
   cursor: pointer;
@@ -430,6 +430,7 @@
   background-image: initial;
   background-repeat: no-repeat;
   background-position: center;
+  background-size: initial;
   filter: blur(350px);
   z-index: -1;
   cursor: initial;
@@ -681,6 +682,7 @@
   background-image: initial;
   background-repeat: no-repeat;
   background-position: center;
+  background-size: initial;
   filter: 400px;
   z-index: initial;
   cursor: initial;
@@ -701,6 +703,7 @@
     background-image: initial;
     background-repeat: no-repeat;
     background-position: center;
+    background-size: initial;
     filter: 200px;
     z-index: initial;
     cursor: initial;
@@ -726,6 +729,7 @@
   background-image: initial;
   background-repeat: no-repeat;
   background-position: center;
+  background-size: initial;
   filter: 400px;
   z-index: initial;
   cursor: initial;
@@ -747,6 +751,7 @@
     background-image: initial;
     background-repeat: no-repeat;
     background-position: center;
+    background-size: initial;
     filter: 400px;
     z-index: initial;
     cursor: initial;
@@ -768,6 +773,7 @@
     background-image: initial;
     background-repeat: no-repeat;
     background-position: center;
+    background-size: initial;
     filter: 400px;
     z-index: initial;
     cursor: initial;
@@ -789,6 +795,7 @@
     background-image: initial;
     background-repeat: no-repeat;
     background-position: center;
+    background-size: initial;
     filter: 400px;
     z-index: initial;
     cursor: initial;
@@ -810,6 +817,7 @@
     background-image: initial;
     background-repeat: no-repeat;
     background-position: center;
+    background-size: initial;
     filter: 350px;
     z-index: initial;
     cursor: initial;
@@ -1195,12 +1203,25 @@
     padding: 35px;
   }
 }
+@media screen and (max-width: 550px) {
+  .person-modal__container {
+    padding: 35px 15px;
+  }
+}
 @media screen and (max-width: 900px) {
   .person-modal__container::before {
     width: 50px;
     height: 50px;
     top: -27px;
     right: -27px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .person-modal__container::before {
+    width: 30px;
+    height: 30px;
+    top: -10px;
+    right: -10px;
   }
 }
 .person-modal__title {
@@ -1216,16 +1237,11 @@
 }
 @media screen and (max-width: 800px) {
   .person-modal__title {
-    flex-flow: column;
+    display: none;
   }
 }
 .person-modal__mark {
   position: relative;
-}
-@media screen and (max-width: 800px) {
-  .person-modal__mark {
-    margin-top: 20px;
-  }
 }
 .person-modal__mark::before {
   content: "*";
@@ -1261,6 +1277,11 @@
     top: calc((70px - 19px) / 2 - 3px);
   }
 }
+@media screen and (max-width: 800px) {
+  .person-modal__input-wrap::before {
+    top: calc((45px - 19px) / 2 - 3px);
+  }
+}
 .person-modal__input-wrap:focus-within::before {
   color: #696969;
   transition: 0.2s color;
@@ -1286,12 +1307,17 @@
 .person-modal__input {
   width: 100%;
   height: 85px;
-  font-size: 19px;
   text-indent: 40px;
 }
 @media screen and (max-width: 1200px) {
   .person-modal__input {
     height: 70px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .person-modal__input {
+    height: 45px;
+    border-radius: 15px;
   }
 }
 .person-modal__btn {
@@ -1301,6 +1327,12 @@
   .person-modal__btn {
     height: 70px;
     font-size: 21px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .person-modal__btn {
+    height: 45px;
+    border-radius: 15px;
   }
 }
 
