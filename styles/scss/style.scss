@@ -10,6 +10,9 @@
 @import 'sections/footer';
 @import 'modals/thanks-modal';
 @import 'modals/person-modal';
+@import 'modals/registered-modal';
+@import 'modals/soon-modal';
+@import 'modals/error-modal';
 body {
     font-family: "Roboto Bold";
     background-color: $main-background-color;    

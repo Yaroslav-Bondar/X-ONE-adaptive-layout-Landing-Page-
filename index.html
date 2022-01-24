@@ -272,9 +272,10 @@
         </div>
     </section>
     <div class="modal thanks-modal">
-        <div class="modal__container thanks-modal__container modal_txt">
+        <div id="mod" class="modal__container thanks-modal__container modal_txt">
+            <div class="modal__close-btn thanks-modal__close-btn"></div>
             <h1 class="modal__title thanks-modal__title">Спасибо!</h1>
-            <div class="modal__message thanks-modal__message">
+            <div class="thanks-modal__message">
                 Не забудьте выполнить предыдущие два пункта, они обязательны для того, чтобы принять 
                 участие в главном розыгрыше. На указанную почту вам скоро придет письмо с
                 подтверждением вашего участия в главном розыгрыше.
@@ -284,6 +285,7 @@
     </div>
     <div class="modal person-modal">
         <div class="modal__container person-modal__container">
+            <div class="modal__close-btn person-modal__close-btn"></div>
             <h1 class="modal__title person-modal__title">
                 Заполните форму 
                 <span class="person-modal__mark mark">
@@ -313,7 +315,34 @@
             </form>
         </div> 
     </div>
-
+    <div class="modal registered-modal">
+        <div class="modal__container registered-modal__container modal_txt">
+            <div class="modal__close-btn registered-modal__close-btn"></div>
+            <div class="modal__text registered-modal__text">
+                <span class="accent__color">Номер,</span>
+                который Вы ввели уже зарегистрирован <span class="accent__color">в нашей базе</span>
+            </div>
+        </div>
+    </div>
+    <div class="modal soon-modal">
+        <div class="modal__container soon-modal__container modal_txt">
+            <div class="modal__close-btn soon-modal__close-btn"></div>
+            <div class="modal__text soon-modal__text">
+                <span class="accent__color">Спасибо,</span>
+                термокружка <span class="accent__color">X-One</span> теперь ваша! Скоро доставим
+            </div>
+        </div>
+    </div>
+    <div class="modal error-modal" onclick="alert(dfd)">
+        <div class="modal__container error-modal__container modal_txt">
+            <div class="modal__close-btn error-modal__close-btn"></div>
+            <div class="modal__text error-modal__text">
+                <span class="accent__color">Номер,</span>
+                который вы ввели введен с ошибками. Убедись, что вы вводите его
+                термокружка <span class="accent__color">правильно.</span>
+            </div>
+        </div>
+    </div>
 <!-- swiper slaider -->
 <!-- <script src="js/plugins/swiper_slider/swiper-bundle.min.js"></script> -->
 <!-- <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script> -->
@@ -324,6 +353,6 @@
 <!-- <script src="js/sections/prize/prizeSlider.js"></script> -->
 <!-- <script src="js/sections/present/presentGap.js"></script> -->
 <script src="js/sections/draw/slider/drawSlider.js"></script>
-
+<script src="js/modal/modalClose.js"></script>
 </body>
 </html>

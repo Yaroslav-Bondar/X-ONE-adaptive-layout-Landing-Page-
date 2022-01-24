@@ -180,14 +180,46 @@
     height: 100vh;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
     @extend %center-xy-flex;
+    &__close-btn {
+        position: absolute;
+        top: -30px;
+        left: initial;
+        right: -30px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: no-repeat url("../img/modal/close.svg") center $white; 
+        background-size: 42%;
+        cursor: pointer;
+        overflow: hidden;
+        @media screen and(max-width: $brkpoint-2) {
+            width: 50px;
+            height: 50px;
+            top: -25px;
+            right: -25px;
+        }
+        @media screen and(max-width: $brkpoint-3) {
+            width: 30px;
+            height: 30px;
+            top: -15px;
+            right: -15px;
+        }
+    }
     &__container {
         position: relative;
         border-radius: 25px;
         background-color: $slide-not-active-color;
-        &::before {
-            @include decor(60px, 60px, -30px, $bgcolor: $white, 
-                $bgimage: url('../img/modal/close.svg'), $bgsize: 42%,
-                $cursor:pointer, $right: -30px);
+        &.thanks-modal__container,
+        &.registered-modal__container,
+        &.soon-modal__container,
+        &.error-modal__container,
+        &.person-modal__container {
+            @media screen and (max-width: $brkpoint-1) {
+                width: 80%;
+            }
+        }
+        @media screen and(max-width: $brkpoint-3) {
+            border-radius: 20px;
         }
     }
     &__title {
@@ -196,10 +228,25 @@
     &_txt {
         padding: 70px 110px;
         width: 710px;
+        @media screen and (max-width: $brkpoint-2) {
+            padding: 65px;
+        }
+        @media screen and (max-width: $brkpoint-3) {
+            padding: 35px;
+        }
+    }
+    &__text {
+        @include font(normal, 35px, 120%, $white, $family: 'Roboto Regular');
+        @media screen and(max-width: $brkpoint-3) {
+            font-size: 22px;
+        }
     }
 }
 .mark {
     @include font(400, 15px, 125%, $gray-to-rgba, $family: 'Roboto Regular');
+}
+.close {
+    display: none;
 } 
 @keyframes fade {
     0%   {opacity: 0.5;}
