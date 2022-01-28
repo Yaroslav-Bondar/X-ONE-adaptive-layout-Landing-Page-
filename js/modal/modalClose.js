@@ -1,6 +1,4 @@
-const modal = document.querySelector('.modal');
-console.log(modal);
-modal.addEventListener('click', (e) => {
-    console.log(this);
-    console.log('this');
+document.body.addEventListener('click', (e) => {
+    if(!e.target.classList.contains('modal__close-btn')) return;
+    e.target.closest('.modal').style.display = 'none';
 });
