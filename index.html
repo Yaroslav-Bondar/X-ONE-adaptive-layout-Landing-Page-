@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="styles/style.css">
     <title>X-ONE</title>
 </head>
-<body>
+<body id="body">
     <header class="header">
         <div class="wrapper">
             <div class="logo header__logo">
@@ -66,9 +66,9 @@
                         колонку Алису Max, Apple Watch или AirPods Pro.
                         колонку Алису Max, Apple Watch или AirPods Pro. -->
                     </div>     
-                    <div class="prize__button btn">
+                    <button class="prize__button btn" data-modal="thanks_modal">
                         Участвовать
-                    </div>
+                    </button>
                 </div>
                 <div class="prize__block2">
                     <div class="prize__slider">
@@ -165,10 +165,10 @@
                     </div>
                 </div>
                 <div class="draw__container-form">
-                    <form action="#" class="form draw__form" method="POST">
+                    <form onsubmit="return false;" action="#" class="form draw__form" method="POST">
                         <input type="text" class="form__input draw__input" placeholder="Instagram">
                         <input type="email" class="form__input draw__input" placeholder="Email">
-                        <button class="form__btn draw__form-btn btn">Отправить</button>
+                        <button class="form__btn draw__form-btn btn" data-modal="soon_modal">Отправить</button>
                     </form>
                 </div>
             </div>
@@ -182,7 +182,7 @@
                     <h2 class="present__title title">
                         Гарантированный <span class="accent__color">подарок</span>
                     </h2>
-                    <form action="#" class="form present__form" method="POST">
+                    <form onsubmit="return false;" action="#" class="form present__form" method="POST">
                         <div class="present__form-wrap">
                             <div class="present__form-mark mark"> 
                                 <span class="accent__color">*</span>
@@ -208,7 +208,7 @@
                             </div>
                             <input type="number" class="form__input present__input" placeholder="Номер">
                         </div>
-                        <button class="form__btn present__form-btn btn">Отправить</button>
+                        <button class="form__btn present__form-btn btn" data-modal="person_modal">Отправить</button>
                     </form>
                 </div>
                 <div class="present__block2">
@@ -271,7 +271,7 @@
             </div>
         </div>
     </section>
-    <div class="modal thanks-modal">
+    <div id="thanks_modal" class="modal thanks-modal">
         <div id="mod" class="modal__container thanks-modal__container modal_txt">
             <div class="modal__close-btn thanks-modal__close-btn"></div>
             <h1 class="modal__title thanks-modal__title">Спасибо!</h1>
@@ -283,7 +283,7 @@
             </div>
         </div>
     </div>
-    <div class="modal person-modal">
+    <div id="person_modal" class="modal person-modal">
         <div class="modal__container person-modal__container">
             <div class="modal__close-btn person-modal__close-btn"></div>
             <h1 class="modal__title person-modal__title">
@@ -292,7 +292,7 @@
                     (обязательное поле)
                 </span>
             </h1>
-            <form action="#" class="person-modal__form">
+            <form onsubmit="return false;" action="#" class="person-modal__form">
                 <div class="person-modal__input-wrap">
                     <input type="text" class="person-modal__input form__input" placeholder="Город">
                 </div>
@@ -324,7 +324,7 @@
             </div>
         </div>
     </div>
-    <div class="modal soon-modal">
+    <div id="soon_modal" class="modal soon-modal">
         <div class="modal__container soon-modal__container modal_txt">
             <div class="modal__close-btn soon-modal__close-btn"></div>
             <div class="modal__text soon-modal__text">
@@ -333,7 +333,7 @@
             </div>
         </div>
     </div>
-    <div class="modal error-modal" onclick="alert(dfd)">
+    <div class="modal error-modal">
         <div class="modal__container error-modal__container modal_txt">
             <div class="modal__close-btn error-modal__close-btn"></div>
             <div class="modal__text error-modal__text">
@@ -353,6 +353,6 @@
 <!-- <script src="js/sections/prize/prizeSlider.js"></script> -->
 <!-- <script src="js/sections/present/presentGap.js"></script> -->
 <script src="js/sections/draw/slider/drawSlider.js"></script>
-<script src="js/modal/modalClose.js"></script>
+<script src="js/modal/modal.js"></script>
 </body>
 </html>

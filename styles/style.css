@@ -271,7 +271,7 @@
   }
 }
 .modal {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -1216,6 +1216,9 @@
   }
 }
 
+.thanks-modal {
+  display: none;
+}
 .thanks-modal__title {
   margin-bottom: 25px;
 }
