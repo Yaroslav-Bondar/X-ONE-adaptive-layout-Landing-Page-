@@ -31,7 +31,6 @@ Gap.prototype.checkGap = function(axis) {
     }
     else if(axis === 'y') {
         gap = this.gapY;
-        // + window.PageYOffset
         gapDifference = (Gap.prototype.getCoords(this.objB).coords.top) - (Gap.prototype.getCoords(this.objA).coords.bottom);
     }
     else {
@@ -41,34 +40,32 @@ Gap.prototype.checkGap = function(axis) {
 
     if(gapDifference == gap) return false;
     if(gapDifference >= 0) {
-        console.log('gapDifference >= 0');
+        // console.log('gapDifference >= 0');
         if(gapDifference < gap) {
-            console.log('checkGap', SMALL);
-            console.log('checkGap: axis', axis);
+            // console.log('checkGap', SMALL);
+            // console.log('checkGap: axis', axis);
             return { type: SMALL, value: gapDifference, axis: axis };
         }
         if(gapDifference > gap) {
-            console.log('checkGap', BIG);
-            console.log('checkGap: axis', axis);
-            console.log('checkGap', gapDifference);
+            // console.log('checkGap', BIG);
+            // console.log('checkGap: axis', axis);
+            // console.log('checkGap', gapDifference);
             return { type: BIG, value: gapDifference , axis: axis};
         }
         if(gapDifference == 0) {
-            console.log('checkGap', ZERO);
-            console.log('checkGap: axis', axis);
+            // console.log('checkGap', ZERO);
+            // console.log('checkGap: axis', axis);
             return { type: ZERO, value: gapDifference , axis: axis};
         }
     }
     if(gapDifference < 0 ) {
-        console.log('checkGap', INTERSECTION);
-        console.log('checkGap: axis', axis);
+        // console.log('checkGap', INTERSECTION);
+        // console.log('checkGap: axis', axis);
         return { type: INTERSECTION, value: gapDifference , axis: axis};
     }
     return false;
 }
 Gap.prototype.setGapBothX = function(gapX) {
-    // let gapX = Gap.prototype.getCoords(this.objB).coords.left - Gap.prototype.getCoords(this.objA).coords.right;
-    // if gapX == this.gapX - do nothing
     if(!gapX) return
     if(gapX.axis !== 'x') {
         console.log("setGapBothX: wrong function parameter when calling the checkGap function !!! should be a string 'x'");

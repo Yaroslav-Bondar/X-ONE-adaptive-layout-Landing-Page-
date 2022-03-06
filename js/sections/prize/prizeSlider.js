@@ -1,14 +1,12 @@
 
-// import {Overlap} from '../../common/classes/overlapC'
-
-let prizeSlider = document.querySelector('.prize__slider')
-let prizeSlides = document.getElementsByClassName('prize__slide')
-let prizeDots = document.querySelector('.prize__dots')
-let prizeDot = document.querySelectorAll('.prize__dot')
-let prizeSlideDescrips = document.querySelectorAll('.prize__slide-descrip')
-let prizeDescribe = document.querySelector('.prize__describe')
-let prizeTitle = document.querySelector('.prize__title')
-let prizeBlock2 = document.querySelector('.prize__block2')
+const prizeSlider = document.querySelector('.prize__slider')
+const prizeSlides = document.getElementsByClassName('prize__slide')
+const prizeDots = document.querySelector('.prize__dots')
+const prizeDot = document.querySelectorAll('.prize__dot')
+const prizeSlideDescrips = document.querySelectorAll('.prize__slide-descrip')
+const prizeDescribe = document.querySelector('.prize__describe')
+const prizeTitle = document.querySelector('.prize__title')
+const prizeBlock2 = document.querySelector('.prize__block2')
 
 let slideIndex = 1
 const prizeGapWidth = 1024; // used the value from media queries in _prize.scss file
@@ -25,28 +23,6 @@ function prizeCheckGapSmallY(obj) {
     console.log(e);
   }
 }
-// console.log('prizeCheckGapSmallY', prizeCheckGapSmallY); 
-//  = getComputedStyle(document.documentElement).getPropertyValue('--prize-gap-width');
-// set the same height for all slides
-// console.log('prizeGapWidth = ', prizeGapWidth);
-// function getMaxHeight(obj) {
-//   let slidesHeight = new Array()
-//   for (const item of obj) {
-//     slidesHeight.push(item.offsetHeight)
-//   }
-//   console.log((slidesHeight))
-//   return Math.max(...slidesHeight)  
-// }
-
-// prizeBlock2.style.height = getMaxHeight(prizeSlides) + 'px'
-// prizeBlock2.style.height = maxSlideHeight + 'px' 
-
-// for (const item of prizeSlides) {
-//   if(item.offsetHeight !== maxSlideHeight)
-//     item.style.height = maxSlideHeight + 'px'
-// }
-// // set the same height for all slides
-
 function setIsOverlap(val) {
   if(!isOverlap) {
     isOverlap = val
@@ -80,7 +56,6 @@ function showSlides (n) {
   if(window.innerWidth > prizeGapWidth && prizeCheckGapSmallY(prizeGapB)) {
     prizeGapB.setGapBothX(prizeGapB.checkGap('x'))
   }
-
 }
 showSlides(slideIndex);
 
@@ -97,7 +72,6 @@ window.addEventListener('resize', ()=> {
   if(window.innerWidth > prizeGapWidth && prizeCheckGapSmallY(prizeGapB)) {
     prizeGapB.setGapBothX(prizeGapB.checkGap('x'))
   }
-
 })
 
 // click on slider conteiner
@@ -105,7 +79,6 @@ prizeSlider.addEventListener('click', (e)=> {
   if (e.target.closest('.prize__dots')) return
     showSlides(slideIndex += 1)
     addClass(prizeSlides, 'prize__fade')
-  // maxHeight()
 })
 
 // click on dots

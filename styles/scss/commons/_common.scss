@@ -172,8 +172,6 @@
     }
 }
 .modal {
-    // display: none;
-    // position: absolute;
     position: fixed;
     top: 0;
     left: 0;
@@ -181,6 +179,7 @@
     height: 100vh;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
     @extend %center-xy-flex;
+    z-index: 10;
     &__close-btn {
         position: absolute;
         top: -30px;

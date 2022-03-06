@@ -1,4 +1,3 @@
-
 // close modal window
 document.body.addEventListener('click', (e) => {
     if(!e.target.classList.contains('modal__close-btn') && !e.target.classList.contains('modal')) return;

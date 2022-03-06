@@ -10,10 +10,6 @@
     color: $color;
 }
 
-// @mixin btn() {
-
-// }
-
 @mixin decor($width, $height, $top: initial, $left: initial, $bgcolor: initial, $filter: initial,
              $content: '', $display: block,
              $pos: absolute, $radius: 50%, $z-index: initial, $bgimage: initial, $bgrepeat: no-repeat,
@@ -37,7 +33,6 @@
         size: $bgsize; 
     };
     filter: $filter;
-    // blur($blur);
     z-index: $z-index;
     cursor: $cursor;
     overflow: hidden;

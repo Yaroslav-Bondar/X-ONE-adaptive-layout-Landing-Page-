@@ -277,6 +277,7 @@
   width: 100%;
   height: 100vh;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  z-index: 10;
 }
 .modal__close-btn {
   position: absolute;
@@ -528,36 +529,41 @@
   cursor: pointer;
 }
 .prize__slider .prize__slide .prize__slide-img-wrap::before, .prize__slider .prize__slide .prize__slide-img-wrap::after {
-  display: none;
+  display: block;
   content: "";
   position: absolute;
   width: 581px;
   height: 581px;
   border-radius: 50%;
+  filter: blur(400px);
   z-index: -1;
 }
 @media screen and (max-width: 1024px) {
   .prize__slider .prize__slide .prize__slide-img-wrap::before, .prize__slider .prize__slide .prize__slide-img-wrap::after {
     width: 470px;
     height: 470px;
+    filter: blur(350px);
   }
 }
 @media screen and (max-width: 768px) {
   .prize__slider .prize__slide .prize__slide-img-wrap::before, .prize__slider .prize__slide .prize__slide-img-wrap::after {
     width: 360px;
     height: 360px;
+    filter: blur(200px);
   }
 }
 @media screen and (max-width: 480px) {
   .prize__slider .prize__slide .prize__slide-img-wrap::before, .prize__slider .prize__slide .prize__slide-img-wrap::after {
     width: 264.95px;
     height: 264.95px;
+    filter: blur(180px);
   }
 }
 @media screen and (max-width: 320px) {
   .prize__slider .prize__slide .prize__slide-img-wrap::before, .prize__slider .prize__slide .prize__slide-img-wrap::after {
     width: 200px;
     height: 200px;
+    filter: blur(135px);
   }
 }
 .prize__slider .prize__slide .prize__slide-img-wrap::before {
@@ -730,7 +736,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: initial;
-  filter: 400px;
+  filter: blur(400px);
   z-index: initial;
   cursor: initial;
   overflow: hidden;
@@ -751,7 +757,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: initial;
-    filter: 200px;
+    filter: blur(200px);
     z-index: initial;
     cursor: initial;
     overflow: hidden;
@@ -777,11 +783,10 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: initial;
-  filter: 400px;
+  filter: blur(400px);
   z-index: initial;
   cursor: initial;
   overflow: hidden;
-  display: none;
 }
 @media screen and (max-width: 1024px) {
   .draw__container::before {
@@ -799,7 +804,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: initial;
-    filter: 400px;
+    filter: blur(400px);
     z-index: initial;
     cursor: initial;
     overflow: hidden;
@@ -821,7 +826,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: initial;
-    filter: 400px;
+    filter: blur(400px);
     z-index: initial;
     cursor: initial;
     overflow: hidden;
@@ -843,7 +848,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: initial;
-    filter: 400px;
+    filter: blur(400px);
     z-index: initial;
     cursor: initial;
     overflow: hidden;
@@ -865,7 +870,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: initial;
-    filter: 350px;
+    filter: blur(350px);
     z-index: initial;
     cursor: initial;
     overflow: hidden;
@@ -1026,7 +1031,7 @@
 .present__block1 {
   display: flex;
   flex-flow: column;
-  justify-content: center;
+  justify-content: flex-start;
 }
 @media screen and (max-width: 870px) {
   .present__form :nth-child(n) {
