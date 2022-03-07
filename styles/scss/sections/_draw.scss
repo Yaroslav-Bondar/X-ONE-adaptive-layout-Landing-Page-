@@ -15,7 +15,7 @@
         display: flex;
         align-items: center;
         &::before {
-            @include decor(522px, 522px, 0, 80%, $decor-color-9, blur($decor-blur-xl));
+            @include decor(522px, 522px, -80px, 80%, $decor-color-9, blur($decor-blur-xl));
             // display: none;
             @media screen and(max-width: $brkpoint-1) {
                 @include decor(385px, 385px, 0, 80%, $decor-color-9, blur($decor-blur-xl));

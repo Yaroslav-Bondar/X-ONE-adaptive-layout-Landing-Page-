@@ -36,6 +36,16 @@
   align-items: center;
 }
 
+body {
+  overflow-x: hidden;
+  font-family: "Roboto Bold";
+  background-color: #001424;
+}
+
+::-moz-placeholder {
+  opacity: 1;
+}
+
 .wrapper {
   max-width: 1300px;
   margin: 0 auto;
@@ -737,7 +747,7 @@
   background-position: center;
   background-size: initial;
   filter: blur(400px);
-  z-index: initial;
+  z-index: -1;
   cursor: initial;
   overflow: hidden;
 }
@@ -758,7 +768,7 @@
     background-position: center;
     background-size: initial;
     filter: blur(200px);
-    z-index: initial;
+    z-index: -1;
     cursor: initial;
     overflow: hidden;
   }
@@ -774,7 +784,7 @@
   width: 522px;
   height: 522px;
   position: absolute;
-  top: 0;
+  top: -80px;
   left: 80%;
   right: initial;
   border-radius: 50%;
@@ -784,7 +794,7 @@
   background-position: center;
   background-size: initial;
   filter: blur(400px);
-  z-index: initial;
+  z-index: -1;
   cursor: initial;
   overflow: hidden;
 }
@@ -805,7 +815,7 @@
     background-position: center;
     background-size: initial;
     filter: blur(400px);
-    z-index: initial;
+    z-index: -1;
     cursor: initial;
     overflow: hidden;
   }
@@ -827,7 +837,7 @@
     background-position: center;
     background-size: initial;
     filter: blur(400px);
-    z-index: initial;
+    z-index: -1;
     cursor: initial;
     overflow: hidden;
   }
@@ -849,7 +859,7 @@
     background-position: center;
     background-size: initial;
     filter: blur(400px);
-    z-index: initial;
+    z-index: -1;
     cursor: initial;
     overflow: hidden;
   }
@@ -871,7 +881,7 @@
     background-position: center;
     background-size: initial;
     filter: blur(350px);
-    z-index: initial;
+    z-index: -1;
     cursor: initial;
     overflow: hidden;
   }
@@ -1065,6 +1075,7 @@
   left: 105%;
   transform: translateY(-50%);
   word-wrap: anywhere;
+  z-index: 1;
 }
 @media screen and (max-width: 870px) {
   .present__form-mark {
@@ -1087,9 +1098,46 @@
   margin: 0 !important;
 }
 .present__present {
+  position: relative;
   width: 330px;
   height: 648px;
   margin-left: auto;
+}
+.present__present::before {
+  content: "";
+  display: block;
+  width: 340px;
+  height: 340px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: initial;
+  border-radius: 50%;
+  background-color: #00ABC5;
+  background-image: initial;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: initial;
+  filter: blur(400px);
+  z-index: -1;
+  cursor: initial;
+  overflow: hidden;
+}
+@media screen and (max-width: 1024px) {
+  .present__present::before {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+}
+@media screen and (max-width: 700px) {
+  .present__present::before {
+    width: 244px;
+    height: 244px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: blur(300px);
+  }
 }
 @media screen and (max-width: 870px) {
   .present__present {
@@ -1100,6 +1148,8 @@
 @media screen and (max-width: 700px) {
   .present__present {
     margin: 0 auto;
+    width: 200px;
+    height: 450px;
   }
 }
 .present__present-descr {
@@ -1384,15 +1434,6 @@
 
 .error-modal {
   display: none;
-}
-
-body {
-  font-family: "Roboto Bold";
-  background-color: #001424;
-}
-
-::-moz-placeholder {
-  opacity: 1;
 }
 
 /*# sourceMappingURL=style.css.map */

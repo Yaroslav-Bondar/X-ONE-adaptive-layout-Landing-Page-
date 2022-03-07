@@ -47,6 +47,7 @@
             left: 105%;
             transform: translateY(-50%);
             word-wrap: anywhere;
+            z-index: 1;
             @media screen and(max-width: $present-brkpoint-1) {
                 font-size: 12px;
             }
@@ -68,15 +69,37 @@
         }
     }
     &__present {
+        position: relative;
         width: 330px;
         height: 648px;
         margin-left: auto;
+        &::before {
+            @include decor(340px, 340px, 0, 50%, $logo, blur($decor-blur-xl));
+            @media screen and(max-width: $brkpoint-1) {
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+            }
+            @media screen and(max-width: $present-brkpoint-2) {
+                width: 244px;
+                height: 244px;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                filter: blur(300px);
+            }
+            // @media screen and(max-width: $present-brkpoint-2) {
+            //     left: 50%;
+            //     transform: translate(-50%, -50%);
+            // }
+        }
         @media screen and(max-width: $present-brkpoint-1) {
             width: 278px;
             height: 548px;
         }
         @media screen and(max-width: $present-brkpoint-2) {
             margin: 0 auto;
+            width: 200px;
+            height: 450px;
         }
         &-img {
             @extend %inner-img;

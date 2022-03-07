@@ -1,3 +1,12 @@
+body {
+    overflow-x: hidden;
+    font-family: "Roboto Bold";
+    background-color: $main-background-color;
+}
+// to fix the placeholder opacity in Firefox
+::-moz-placeholder { 
+    opacity: 1;
+}
 .wrapper {
     max-width: $wrapper-width;
     margin: 0 auto;

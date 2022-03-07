@@ -12,7 +12,7 @@
 
 @mixin decor($width, $height, $top: initial, $left: initial, $bgcolor: initial, $filter: initial,
              $content: '', $display: block,
-             $pos: absolute, $radius: 50%, $z-index: initial, $bgimage: initial, $bgrepeat: no-repeat,
+             $pos: absolute, $radius: 50%, $z-index: -1, $bgimage: initial, $bgrepeat: no-repeat,
              $bgposition: center, $bgsize: initial, $cursor: initial, $right: initial) {
     content: $content;
     display: $display;
