@@ -1,30 +1,62 @@
 .present {
+    padding: 50px 0 0 0;
+    @media screen and(max-width: $brkpoint-1) {
+        padding: 50px 0 70px 0;
+    }
     &__conteiner {
-        display: flex;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        @media screen and(max-width: $present-brkpoint-2) {
+            grid-template-columns: 100%;
+        }
     }
-    &__block1,
     &__block2 {
-        width: 50%;
-    }
-    &__block2 {
-        position: relative;
+        @media screen and(max-width: $present-brkpoint-2) {
+            grid-area: 2/1/3/2;
+        }
     }
     &__block1 {
         display: flex;
         flex-flow: column;
-        justify-content: center;
+        justify-content: flex-start;
     }
     &__form {
+        & :nth-child(n) {
+            @media screen and(max-width: $present-brkpoint-1) {
+                height: 65px;
+            }
+        }
+        @media screen and(max-width: $brkpoint-1) {
+            width: 360px;
+        }
+        @media screen and(max-width: $present-brkpoint-1) {
+            width: 300px;
+        }
+        @media screen and(max-width: $present-brkpoint-2) {
+            width: 100%;
+        }
         &-wrap {
             position: relative;
+            height: auto !important;
         }
-        &-descr {
+        &-mark {
             position: absolute;
             width: 310px;
+            height: auto !important;
             top: 50%;
             left: 105%;
             transform: translateY(-50%);
-            @include font(400, 15px, 125%, $gray-to-rgba, $family: 'Roboto Regular');
+            word-wrap: anywhere;
+            z-index: 1;
+            @media screen and(max-width: $present-brkpoint-1) {
+                font-size: 12px;
+            }
+            @media screen and(max-width: $present-brkpoint-2) {
+                position: static;
+                width: 200px;
+                margin: 0 0 5px auto !important;
+                font-size: 10px;
+            }
         }
     }
     &__input {
@@ -37,19 +69,61 @@
         }
     }
     &__present {
+        position: relative;
         width: 330px;
         height: 648px;
         margin-left: auto;
+        &::before {
+            @include decor(340px, 340px, 0, 50%, $logo, blur($decor-blur-xl));
+            @media screen and(max-width: $brkpoint-1) {
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+            }
+            @media screen and(max-width: $present-brkpoint-2) {
+                width: 244px;
+                height: 244px;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                filter: blur(300px);
+            }
+        }
+        @media screen and(max-width: $present-brkpoint-1) {
+            width: 278px;
+            height: 548px;
+        }
+        @media screen and(max-width: $present-brkpoint-2) {
+            margin: 0 auto;
+            width: 200px;
+            height: 450px;
+        }
         &-img {
             @extend %inner-img;
 
 
         }
         &-descr {
-            position: absolute;
-            bottom: 90px;
-            right: 0;
-            // float: left;
+            position: relative;
+            bottom: 152px;
+            float: right;
+            @media screen and(max-width: $brkpoint-1) {
+                position: static;
+                width: 150%;
+                float: none;
+                grid-area: 2/2/3/3;
+                justify-self: end;
+            }
+            @media screen and(max-width: $present-brkpoint-2) {
+                grid-area: 3/1/4/2;
+                width: 80%;
+                padding: 30px 50px;
+                justify-self: center;
+            }
+            @media screen and(max-width: $brkpoint-3) {
+                width: 100%;
+                padding: 20px 35px;
+                font-size: 14px;
+            }
         }
     }
 }

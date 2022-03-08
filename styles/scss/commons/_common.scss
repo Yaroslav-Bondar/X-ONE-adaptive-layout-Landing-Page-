@@ -1,3 +1,12 @@
+body {
+    overflow-x: hidden;
+    font-family: "Roboto Bold";
+    background-color: $main-background-color;
+}
+// to fix the placeholder opacity in Firefox
+::-moz-placeholder { 
+    opacity: 1;
+}
 .wrapper {
     max-width: $wrapper-width;
     margin: 0 auto;
@@ -6,6 +15,10 @@
 .line {
     width: 80px;
     border: 5px solid $accent;
+    @media screen and (max-width: $brkpoint-1) {
+        width: 70px;
+        border: 4px solid $accent;
+    }
     @media screen and (max-width: $brkpoint-2) {
         width: 50px;
         border: 3px solid $accent;
@@ -18,6 +31,10 @@
     border-radius: 25px;
     border: none;
     cursor: pointer;
+    @media screen and (max-width: $brkpoint-3) {
+        font-size: 15px;
+        letter-spacing: 1px;
+    }
 }
 .description {
     width: 750px;
@@ -30,10 +47,25 @@
     display: flex;
     & :not(:last-child) {
         margin-right: 37px;
+        @media screen and (max-width: $brkpoint-3) {
+            margin-right: 20px;
+        }
     }
     &__img {
         width: 36px;
         height: 36px;
+        @media screen and (max-width: $brkpoint-2) {
+            width: 30px;
+            height: 30px;
+        }
+        @media screen and (max-width: $brkpoint-3) {
+            width: 25px;
+            height: 25px;
+        }
+        @media screen and (max-width: $brkpoint-4) {
+            width: 21px;
+            height: 21px;
+        }
         &-item {
             @extend %inner-img;
         }
@@ -44,7 +76,13 @@
 }
 .title {
     margin: 30px 0 50px 0;
-    @include font(700, 45px, 120%, $white)
+    @include font(700, 45px, 120%, $white);
+    @media screen and (max-width: $brkpoint-1) {
+        font-size: 40px;
+    }
+    @media screen and (max-width: $brkpoint-3) {
+        font-size: 33px;
+    }
 }
 .form {
     display: flex;
@@ -60,14 +98,13 @@
         background-color: transparent;
         border-radius: 25px;
         border: 1px solid $input-border-color;
-        transition-property: border-color, box-shadow;
-        transition: .2s;
+        transition: border-color .2s, box-shadow .2s;
         @include font(400, 19px, 125%, $input-placeholder-color, $family: 'Roboto Regular');
     }
     &__input::placeholder,
     &__input::-webkit-input-placeholder,
     &__input::-moz-placeholder {
-        @include font(400, 19px, 125%, $input-placeholder-color, $family: 'Roboto Regular');
+        @include font(400, $placeholder-input-font-size, 125%, $input-placeholder-color, $family: 'Roboto Regular');
     }
     &__input:focus {
         border: 1px solid $accent;
@@ -80,7 +117,146 @@
         height: 85px;
     }
 }
-
+.logo {
+    display: flex;
+} 
+.logo1 {
+    display: flex;
+    align-items: center;
+    &__part1 {
+        width: 40.88px;
+        height: 41.05px;
+        margin-right: 8.27px;
+        @media screen and (max-width: $brkpoint-2) {
+            width: 25px;
+            height: 25px;
+        }
+        @media screen and (max-width: $brkpoint-3) {
+            width: 20px;
+            height: 20px;
+        }
+        @media screen and (max-width: $brkpoint-4) {
+            width: 17px;
+            height: 16px;
+        }
+    }
+    &__part2 {
+        width: 135.65px;
+        height: 31.14px;
+        @media screen and (max-width: $brkpoint-2) {
+            width: 84.24px;
+            height: 18.95px;
+        }
+        @media screen and (max-width: $brkpoint-3) {
+            width: 64px;
+            height: 14px;
+        }
+        @media screen and (max-width: $brkpoint-4) {
+            width: 56px;
+            height: 12px;
+        }
+    }
+    &__part1 > img,
+    &__part2 > img {
+        @extend %inner-img;
+    }
+}
+.logo2 {
+    width: 133.76px;
+    height: 51.73px;
+    @media screen and (max-width: $brkpoint-2) {
+        width: 88px;
+        height: 34px;
+    }
+    @media screen and (max-width: $brkpoint-3) {
+        width: 72px;
+        height: 28px;
+    }
+    @media screen and (max-width: $brkpoint-4) {
+        width: 50px;
+        height: 19px;
+    }
+    & > img {
+        @extend %inner-img;
+    }
+}
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    @extend %center-xy-flex;
+    z-index: 10;
+    &__close-btn {
+        position: absolute;
+        top: -30px;
+        left: initial;
+        right: -30px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: no-repeat url("../img/modal/close.svg") center $white; 
+        background-size: 42%;
+        cursor: pointer;
+        overflow: hidden;
+        @media screen and(max-width: $brkpoint-2) {
+            width: 50px;
+            height: 50px;
+            top: -25px;
+            right: -25px;
+        }
+        @media screen and(max-width: $brkpoint-3) {
+            width: 30px;
+            height: 30px;
+            top: -15px;
+            right: -15px;
+        }
+    }
+    &__container {
+        position: relative;
+        border-radius: 25px;
+        background-color: $slide-not-active-color;
+        &.thanks-modal__container,
+        &.registered-modal__container,
+        &.soon-modal__container,
+        &.error-modal__container,
+        &.person-modal__container {
+            @media screen and (max-width: $brkpoint-1) {
+                width: 80%;
+            }
+        }
+        @media screen and(max-width: $brkpoint-3) {
+            border-radius: 20px;
+        }
+    }
+    &__title {
+        @include font(bold, 35px, 120%, $accent);
+    }
+    &_txt {
+        padding: 70px 110px;
+        width: 710px;
+        @media screen and (max-width: $brkpoint-2) {
+            padding: 65px;
+        }
+        @media screen and (max-width: $brkpoint-3) {
+            padding: 35px;
+        }
+    }
+    &__text {
+        @include font(normal, 35px, 120%, $white, $family: 'Roboto Regular');
+        @media screen and(max-width: $brkpoint-3) {
+            font-size: 22px;
+        }
+    }
+}
+.mark {
+    @include font(400, 15px, 125%, $gray-to-rgba, $family: 'Roboto Regular');
+}
+.close {
+    display: none;
+} 
 @keyframes fade {
     0%   {opacity: 0.5;}
     100% {opacity: 1; }

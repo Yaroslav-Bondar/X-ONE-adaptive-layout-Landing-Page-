@@ -31,7 +31,8 @@
         }
     }
     &__title::before {
-        @include decor(248px, 248px, -111px, -68px, $decor-color-7, $decor-blur-l);
+        @include decor(248px, 248px, -111px, -68px, $decor-color-7, $filter: blur($decor-blur-l),
+                        $z-index: -1);
     }
     &__describe {
         margin-top: 34px;
@@ -70,27 +71,27 @@
             width: 581px;
             height: 581px;
             border-radius: 50%;
-            // filter: blur($decor-blur-xl);
+            filter: blur($decor-blur-xl);
             z-index: -1;
             @media screen and(max-width: $brkpoint-1) {
                 width: 470px;
                 height: 470px;
-                // filter: blur($decor-blur-l);
+                filter: blur($decor-blur-l);
             }
             @media screen and(max-width: $brkpoint-2) {
                 width: 360px;
                 height: 360px;
-                // filter: blur($decor-blur-m);
+                filter: blur($decor-blur-m);
             }
             @media screen and(max-width: $brkpoint-3) {
                 width: 264.95px;
                 height: 264.95px;
-                // filter: blur($decor-blur-s);
+                filter: blur($decor-blur-s);
             }
             @media screen and(max-width: $brkpoint-4) {
                 width: 200px;
                 height: 200px;
-                // filter: blur($decor-blur-xs);
+                filter: blur($decor-blur-xs);
             }
         }
         & .prize__slide .prize__slide-img-wrap::before {
@@ -171,7 +172,7 @@
                 width: 600px;
             }
             @media screen and (max-width: $brkpoint-1) {
-                width: 100%;
+                width: 100% !important;
             }
             @media screen and (max-width: $brkpoint-2) {
                 padding: 30px 45px;

@@ -8,15 +8,11 @@
 @import 'sections/draw';
 @import 'sections/present';
 @import 'sections/footer';
-
-body {
-    font-family: "Roboto Bold";
-    background-color: $main-background-color;    
-}
-// to fix the placeholder opacity in Firefox
-::-moz-placeholder { 
-    opacity: 1;
-}
+@import 'modals/thanks-modal';
+@import 'modals/person-modal';
+@import 'modals/registered-modal';
+@import 'modals/soon-modal';
+@import 'modals/error-modal';
 
 
 

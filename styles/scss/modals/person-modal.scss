@@ -1,0 +1,121 @@
+.person-modal {
+    display: none;
+    &__close-btn {
+
+    }
+    &__container {
+        width: 860px;
+        padding: 70px 110px;
+        @media screen and(max-width: $person-modal-brkpoint-1) {
+            padding: 65px;
+        }
+        @media screen and(max-width: $person-modal-brkpoint-3) {
+            padding: 35px;
+        }
+        @media screen and(max-width: $person-modal-brkpoint-4) {
+            padding: 35px 15px;
+        }
+    }
+    &__title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 40px;
+        @media screen and(max-width: $person-modal-brkpoint-1) {
+            font-size: 30px;
+        }
+        @media screen and(max-width: $person-modal-brkpoint-3) {
+            display: none;;
+        }
+    }
+    &__mark {
+        position: relative;
+    }
+    &__mark::before {
+        content: '*';
+        position: absolute;
+        top: -3px;
+        left: -10px;
+        color: $accent;
+    }
+    &__form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 'city street'
+                             'house office'
+                             'name phone'
+                             'btn btn';
+        gap: 20px;
+        @media screen and(max-width: $person-modal-brkpoint-3) {
+            grid-template-columns: 1fr;
+            grid-template-areas: 'city' 
+                                'street'
+                                'house'
+                                'office'
+                                'name' 
+                                'phone'
+                                'btn';
+        }
+    }
+    &__input-wrap {
+        position: relative;
+    }
+    &__input-wrap::before {
+        content: '*';
+        position: absolute;
+        text-indent: calc(#{$person-input-text-indent} - 10px);
+        color: $accent;
+        top: calc((#{$person-input-height} - #{$placeholder-input-font-size}) / 2 - 3px);
+        @media screen and(max-width: $person-modal-brkpoint-1) {
+            top: calc((#{$person-input-height-brkpoint1} - #{$placeholder-input-font-size}) / 2 - 3px); 
+        }
+        @media screen and(max-width: $person-modal-brkpoint-3) {
+            top: calc((#{$person-input-height-brkpoint3} - #{$placeholder-input-font-size}) / 2 - 3px); 
+        }
+    }
+    &__input-wrap:focus-within::before {
+        color: $input-placeholder-color;
+        transition: .2s color;
+    }
+    &__input-wrap:nth-child(1) {
+        grid-area: city;
+    }
+    &__input-wrap:nth-child(2) {
+        grid-area: house;
+    }
+    &__input-wrap:nth-child(3) {
+        grid-area: name;
+    }
+    &__input-wrap:nth-child(4) {
+        grid-area: street;
+    }
+    &__input-wrap:nth-child(5) {
+        grid-area: office;
+    }
+    &__input-wrap:nth-child(6) {
+        grid-area: phone;
+    }
+    &__input {
+        width: 100%;
+        height: $person-input-height;
+        text-indent: $person-input-text-indent;
+        @media screen and(max-width: $person-modal-brkpoint-1) {
+            height: $person-input-height-brkpoint1;
+        }
+        @media screen and(max-width: $person-modal-brkpoint-3) {
+            height: $person-input-height-brkpoint3;
+            border-radius: 15px;
+        }
+    }
+    &__btn {
+        grid-area: btn;
+        @media screen and(max-width: $person-modal-brkpoint-2) {
+            height: 70px;
+            font-size: 21px;
+        }
+        @media screen and(max-width: $person-modal-brkpoint-2) {
+            height: 45px;
+            border-radius: 15px;
+        }
+    }
+}

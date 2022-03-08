@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="styles/style.css">
     <title>X-ONE</title>
 </head>
-<body>
+<body id="body">
     <header class="header">
         <div class="wrapper">
             <div class="logo header__logo">
@@ -29,12 +29,12 @@
                 </div>
             </div>
             <div class="social header__social">
-                <div class="social__img header__social-img">
+                <a href="#" class="social__img header__social-img">
                     <img src="img/social/facebook.png" alt="logo_facebook" class="social__img-item header__social-img-item">
-                </div>
-                <div class="social__img header__social-img">
+                </a>
+                <a href="#" class="social__img header__social-img">
                     <img src="img/social/instagram.png" alt="logo_instagram" class="social__img-item header__social-img-item">
-                </div>                
+                </a>                
             </div>
             <div class="header__border"></div>
         </div>
@@ -47,28 +47,14 @@
                     <h2 class="prize__title">
                         Выиграй умную колонку 
                         <span class="accent__color">Алису Max, Apple Watch и AirPods Pro.</span>
-                        <!-- Выиграй умную колонку 
-                        <span class="accent__color">Алису Max, Apple Watch и AirPods Pro.</span>                        Выиграй умную колонку 
-                        <span class="accent__color">Алису Max, Apple Watch и AirPods Pro.</span>                        Выиграй умную колонку 
-                        <span class="accent__color">Алису Max, Apple Watch и AirPods Pro.</span>                        Выиграй умную колонку 
-                        <span class="accent__color">Алису Max, Apple Watch и AirPods Pro.</span>                        Выиграй умную колонку 
-                        <span class="accent__color">Алису Max, Apple Watch и AirPods Pro.</span> -->
                     </h2>
                     <div class="prize__describe">
                         Поздравляем с покупкой стеклопакетов X-One! У вас есть шанс выиграть умную 
                         колонку Алису Max, Apple Watch или AirPods Pro.
-                        колонку Алису Max, Apple Watch или AirPods Pro.
-                        <!-- Поздравляем с покупкой стеклопакетов X-One! У вас есть шанс выиграть умную 
-                        колонку Алису Max, Apple Watch или AirPods Pro.
-                        колонку Алису Max, Apple Watch или AirPods Pro.               Поздравляем с покупкой стеклопакетов X-One! У вас есть шанс выиграть умную 
-                        колонку Алису Max, Apple Watch или AirPods Pro.
-                        колонку Алису Max, Apple Watch или AirPods Pro.               Поздравляем с покупкой стеклопакетов X-One! У вас есть шанс выиграть умную 
-                        колонку Алису Max, Apple Watch или AirPods Pro.
-                        колонку Алису Max, Apple Watch или AirPods Pro. -->
                     </div>     
-                    <div class="prize__button btn">
+                    <button class="prize__button btn" data-modal="thanks_modal">
                         Участвовать
-                    </div>
+                    </button>
                 </div>
                 <div class="prize__block2">
                     <div class="prize__slider">
@@ -82,19 +68,7 @@
                             <div class="prize__slide-descrip description">
                                 Apple Watch Series 5 (цвет модели может отличаться от изображения):
                                 умные часы с тысячами функций для работы, спорта, 
-                                учёбы и развлечений
-                                <!-- Apple Watch Series 5 (цвет модели может отличаться от изображения):
-                                умные часы с тысячами функций для работы, спорта, 
-                                учёбы и развлечений
-                                Apple Watch Series 5 (цвет модели может отличаться от изображения):
-                                умные часы с тысячами функций для работы, спорта, 
-                                учёбы и развлечений
-                                Apple Watch Series 5 (цвет модели может отличаться от изображения):
-                                умные часы с тысячами функций для работы, спорта, 
-                                учёбы и развлечений
-                                Apple Watch Series 5 (цвет модели может отличаться от изображения):
-                                умные часы с тысячами функций для работы, спорта, 
-                                учёбы и развлечений -->
+                                учёбы и развлечений.
                             </div>
                         </div>
                         <!-- prize__fade -->
@@ -165,10 +139,10 @@
                     </div>
                 </div>
                 <div class="draw__container-form">
-                    <form action="#" class="form draw__form" method="POST">
+                    <form onsubmit="return false;" action="#" class="form draw__form" method="POST">
                         <input type="text" class="form__input draw__input" placeholder="Instagram">
                         <input type="email" class="form__input draw__input" placeholder="Email">
-                        <button class="form__btn draw__form-btn btn">Отправить</button>
+                        <button class="form__btn draw__form-btn btn" data-modal="soon_modal">Отправить</button>
                     </form>
                 </div>
             </div>
@@ -182,29 +156,25 @@
                     <h2 class="present__title title">
                         Гарантированный <span class="accent__color">подарок</span>
                     </h2>
-                    <form action="#" class="form present__form" method="POST">
+                    <form onsubmit="return false;" action="#" class="form present__form" method="POST">
                         <div class="present__form-wrap">
-                            <input type="number" class="form__input present__input" placeholder="Номер">
-                            <span class="present__form-descr"> 
+                            <div class="present__form-mark mark"> 
                                 <span class="accent__color">*</span>
                                 введите уникальный номер с наклейки на вашем стеклопакете X-One
-                            </span>
+                            </div>
+                            <input type="number" class="form__input present__input" placeholder="Номер">
                         </div>
-                        <button class="form__btn present__form-btn btn">Отправить</button>
+                        <button class="form__btn present__form-btn btn" data-modal="person_modal">Отправить</button>
                     </form>
                 </div>
                 <div class="present__block2">
                     <div class="present__present">
                         <img src="img/present/01.png" alt="mug" class="present__present-img">
-                        <div class="present__present-descr description">
-                            Для получения гарантированного подарка – термокружки X-One, нужно ввести уникальный номер
-                            с наклейки на вашем стеклопакете X-One. Номер можно зарегистрировать единожды.
-                        </div>
                     </div>
-                    <!-- <div class="present__present-descr description">
+                    <div class="present__present-descr description">
                         Для получения гарантированного подарка – термокружки X-One, нужно ввести уникальный номер
                         с наклейки на вашем стеклопакете X-One. Номер можно зарегистрировать единожды.
-                    </div> -->
+                    </div>
                 </div>
             </div>
         </div>
@@ -232,25 +202,95 @@
                     </div>
                 </a>
                 <div class="social footer__social">
-                    <div class="social__img footer__social-img">
+                    <a href="#" class="social__img footer__social-img">
                         <img src="img/social/facebook.png" alt="logo_facebook" class="social__img-item footer__social-img-item">
-                    </div>
-                    <div class="social__img footer__social-img">
+                    </a>
+                    <a href="#" class="social__img footer__social-img">
                         <img src="img/social/instagram.png" alt="logo_instagram" class="social__img-item footer__social-img-item">
-                    </div>                
+                    </a>                
                 </div>
             </div>
         </div>
     </section>
+    <div id="thanks_modal" class="modal thanks-modal">
+        <div id="mod" class="modal__container thanks-modal__container modal_txt">
+            <div class="modal__close-btn thanks-modal__close-btn"></div>
+            <h1 class="modal__title thanks-modal__title">Спасибо!</h1>
+            <div class="thanks-modal__message">
+                Не забудьте выполнить предыдущие два пункта, они обязательны для того, чтобы принять 
+                участие в главном розыгрыше. На указанную почту вам скоро придет письмо с
+                подтверждением вашего участия в главном розыгрыше.
+               <p>И не забудьте получить <span class="accent__color">гарантированный подарок</span>, о том как это сделать читайте ниже.</p>
+            </div>
+        </div>
+    </div>
+    <div id="person_modal" class="modal person-modal">
+        <div class="modal__container person-modal__container">
+            <div class="modal__close-btn person-modal__close-btn"></div>
+            <h1 class="modal__title person-modal__title">
+                Заполните форму 
+                <span class="person-modal__mark mark">
+                    (обязательное поле)
+                </span>
+            </h1>
+            <form onsubmit="return false;" action="#" class="person-modal__form">
+                <div class="person-modal__input-wrap">
+                    <input type="text" class="person-modal__input form__input" placeholder="Город">
+                </div>
+                <div class="person-modal__input-wrap">
+                    <input type="text" class="person-modal__input form__input" placeholder="№ дома">
+                </div>
+                <div class="person-modal__input-wrap">
+                    <input type="text" class="person-modal__input form__input" placeholder="ФИО получателя">
+                </div>
+                <div class="person-modal__input-wrap">
+                    <input type="text" class="person-modal__input form__input" placeholder="Улица">
+                </div>
+                <div class="person-modal__input-wrap">
+                    <input type="text" class="person-modal__input form__input" placeholder="№ кв или офиса">
+                </div>
+                <div class="person-modal__input-wrap">
+                    <input type="tel" class="person-modal__input form__input" placeholder="Телефон">
+                </div>
+                <button class="person-modal__btn form__btn btn">Отправить</button>
+            </form>
+        </div> 
+    </div>
+    <div class="modal registered-modal">
+        <div class="modal__container registered-modal__container modal_txt">
+            <div class="modal__close-btn registered-modal__close-btn"></div>
+            <div class="modal__text registered-modal__text">
+                <span class="accent__color">Номер,</span>
+                который Вы ввели уже зарегистрирован <span class="accent__color">в нашей базе</span>
+            </div>
+        </div>
+    </div>
+    <div id="soon_modal" class="modal soon-modal">
+        <div class="modal__container soon-modal__container modal_txt">
+            <div class="modal__close-btn soon-modal__close-btn"></div>
+            <div class="modal__text soon-modal__text">
+                <span class="accent__color">Спасибо,</span>
+                термокружка <span class="accent__color">X-One</span> теперь ваша! Скоро доставим
+            </div>
+        </div>
+    </div>
+    <div class="modal error-modal">
+        <div class="modal__container error-modal__container modal_txt">
+            <div class="modal__close-btn error-modal__close-btn"></div>
+            <div class="modal__text error-modal__text">
+                <span class="accent__color">Номер,</span>
+                который вы ввели введен с ошибками. Убедись, что вы вводите его
+                термокружка <span class="accent__color">правильно.</span>
+            </div>
+        </div>
+    </div>
 <!-- swiper slaider -->
-<!-- <script src="js/plugins/swiper_slider/swiper-bundle.min.js"></script> -->
-<!-- <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script> -->
-<!-- <script src="js/common/classes/overlapC.js"></script> -->
+<script src="js/plugins/swiper_slider/swiper-bundle.min.js"></script>
 <script src="js/constants/setGapConstants.js"></script>
-<script src="js/utils/setGap/setGapF.js"></script>
-<!-- <script type="module" src="js/sections/prize/prizeSlider.js"></script> -->
+<script src="js/utils/setGap/setGap.js"></script>
 <script src="js/sections/prize/prizeSlider.js"></script>
+<script src="js/sections/present/presentGap.js"></script>
 <script src="js/sections/draw/slider/drawSlider.js"></script>
-
+<script src="js/modal/modal.js"></script>
 </body>
 </html>

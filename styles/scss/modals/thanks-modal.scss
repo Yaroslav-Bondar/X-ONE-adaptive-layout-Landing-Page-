@@ -1,0 +1,14 @@
+.thanks-modal {
+    display: none;
+    &__container {
+    }
+    &__title {
+        margin-bottom: 25px;
+    }
+    &__message {
+        @include font(normal, 17px, 150%, $white, $family: 'Roboto Regular');
+        & > p:first-child {
+            margin-top: 20px;
+        }
+    }
+}

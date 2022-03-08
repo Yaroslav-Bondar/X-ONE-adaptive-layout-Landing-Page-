@@ -34,11 +34,15 @@ $slide-not-active-color: #002138;
 
 // //colors
 
-// breakpoints
+$placeholder-input-font-size: 19px;
+
+// breakpoints - variables are used throughout the project,
+// it is not recommended to change them
 $brkpoint-1: 1024px;
 $brkpoint-2: 768px;
 $brkpoint-3: 480px;
 $brkpoint-4: 320px;
+
 
 // prize
 $prize-brkpoint-1: 1200px;
@@ -46,10 +50,23 @@ $prize-brkpoint-2: 1100px;
 
 // draw 
 $draw-brkpoint-1: 1114px;
-$draw-brkpoint-2: 679px;
+$draw-brkpoint-2: 870px;
 
-// $brkpoint-3: 1024px;
-// $brkpoint-2: 768px;
-// $brkpoint-3: 480px;
-// $brkpoint-4: 320px;
+$draw-brkpoint-3: 700px;
+
+// present
+$present-brkpoint-1: 870px;
+$present-brkpoint-2: 700px;
+// $present-brkpoint-2: 700px;
+
+// person-modal
+$person-input-text-indent: 40px;
+$person-input-height: 85px;
+$person-input-height-brkpoint1: 70px;
+$person-input-height-brkpoint3: 45px;
+
+$person-modal-brkpoint-1: 1200px;
+$person-modal-brkpoint-2: 900px;
+$person-modal-brkpoint-3: 800px;
+$person-modal-brkpoint-4: 550px;
     

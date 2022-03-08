@@ -8,9 +8,12 @@
     text-transform: $text-transform;
     line-height: $line_height;
     color: $color;
-  }
+}
 
-@mixin decor($width, $height, $top, $left, $color, $blur, $content: '', $display: block, $pos: absolute, $radius: 50%, $z-index: -1) {
+@mixin decor($width, $height, $top: initial, $left: initial, $bgcolor: initial, $filter: initial,
+             $content: '', $display: block,
+             $pos: absolute, $radius: 50%, $z-index: -1, $bgimage: initial, $bgrepeat: no-repeat,
+             $bgposition: center, $bgsize: initial, $cursor: initial, $right: initial) {
     content: $content;
     display: $display;
     width: $width;
@@ -18,12 +21,19 @@
     position: $pos;
     top: $top;
     left: $left;
+    right: $right;
     border: {
         radius: $radius;
     }
     background: {
-        color: $color;
+        color: $bgcolor;
+        image: $bgimage;
+        repeat: $bgrepeat;
+        position: $bgposition;
+        size: $bgsize; 
     };
-    filter: blur($blur);
+    filter: $filter;
     z-index: $z-index;
+    cursor: $cursor;
+    overflow: hidden;
 }  

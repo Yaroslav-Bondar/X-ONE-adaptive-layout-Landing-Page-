@@ -13,7 +13,8 @@ function showDrawSlide(n) {
 
 showDrawSlide(drawSlideIndex)
 
-// setInterval(()=>{showDrawSlide(drawSlideIndex++)}, 5000)
+// start automatic mode
+// setInterval(()=>{showDrawSlide(drawSlideIndex++)}, 3000)
 
 drawSlider.addEventListener('click', (e)=> {
     if(!e.target.closest('.draw__slide-number')) return
