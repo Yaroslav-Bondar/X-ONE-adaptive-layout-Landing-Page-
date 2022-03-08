@@ -47,8 +47,8 @@ function showSlides (n) {
 
   prizeSlides[slideIndex - 1].style.display = 'block'
   prizeDot[slideIndex - 1].classList.add('prize__dot_active')
-  prizeGapA = new prizeGap(prizeDescribe, prizeSlideDescrips[slideIndex - 1], 140, 30);
-  prizeGapB = new prizeGap(prizeTitle, prizeSlideDescrips[slideIndex - 1], 20, 30);
+  prizeGapA = new PrizeGap(prizeDescribe, prizeSlideDescrips[slideIndex - 1], 140, 30);
+  prizeGapB = new PrizeGap(prizeTitle, prizeSlideDescrips[slideIndex - 1], 20, 30);
 
   if(window.innerWidth > prizeGapWidth && prizeCheckGapSmallY(prizeGapA)) {
     prizeGapA.setGapBothX(prizeGapA.checkGap('x'))
